@@ -6,7 +6,16 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
-.venv
+# Environments
 .env
+.venv/
+env/
+venv/
+
+# VSCode / PyCharm
+.vscode/
 .idea/
+
+
+# OS
+.DS_Store
