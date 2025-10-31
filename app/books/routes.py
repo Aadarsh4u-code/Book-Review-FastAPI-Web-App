@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException, status
 from app.books.models import Book
 from app.books.dependencies import book_service_dep
 from app.books.schemas import BookUpdate, BookRead, BookCreate
-
+from app.core.logger import logger
 
 book_router = APIRouter()
 
@@ -13,9 +13,10 @@ book_router = APIRouter()
 @book_router.get("/", response_model=List[BookRead], status_code=status.HTTP_200_OK)
 async def get_all_books(service: book_service_dep):
     book_list = await service.list_books()
+    logger.info(f"Found {len(book_list)} books")
     if not book_list:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No books found")
-    print('book list', book_list)
+
     return book_list
 
 
