@@ -11,9 +11,9 @@ from app.db.base import Base  # Your SQLAlchemy Base
 from app.core.config import setting  # Your settings
 
 # Import ALL your models so Alembic can detect them
-from app.books.models import Book  # Import all models here
-
-# from app.users.models import User  # Add more as you create them
+## ---Add more as you create them --- ###
+from app.books.models import Book
+from app.auth.models import User
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

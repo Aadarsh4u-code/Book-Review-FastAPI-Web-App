@@ -10,7 +10,7 @@ from app.db.base import Base
 class Book(Base):
     __tablename__ = "books"
 
-    id: Mapped[uuid.UUID] = mapped_column(
+    bid: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, unique=True, index=True
     )
     title: Mapped[str] = mapped_column(String, nullable=False)

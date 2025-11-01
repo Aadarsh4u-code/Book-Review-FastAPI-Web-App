@@ -30,4 +30,5 @@ async def init_db():
         # Import models so they are registered in Base.metadata
         # (SQLAlchemy discovers them by executing the class definitions)
         from app.books.models import Book
+        from app.auth.models import User
         await conn.run_sync(Base.metadata.create_all)
