@@ -1,27 +1,23 @@
 import uuid
-import enum
 from typing import List, TYPE_CHECKING
 from datetime import datetime
 from sqlalchemy import String, Boolean, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP, ENUM as PGEnum
+from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP, ENUM
 
-# from app.books.models import Book
+# from app.books.models import BookModel
 
 from app.db.base import Base
+from app.shared.utils import UserRole
+
 
 # if TYPE_CHECKING:
-#     from app.books.models import Book
+#     from app.books.models import BookModel
 
 
-class UserRole(str, enum.Enum):
-    USER = "user"
-    MANAGER = "manager"
-    ADMIN = "admin"
-    SUPERADMIN = "superadmin"
 
 
-class User(Base):
+class UserModel(Base):
     __tablename__ = 'users'
 
     uid: Mapped[uuid.UUID] = mapped_column(
@@ -37,12 +33,12 @@ class User(Base):
     updated_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now(),
                                                  onupdate=func.now())
     role: Mapped[UserRole] = mapped_column(
-        PGEnum(UserRole, name="user_role_enum", create_type=True),
+        ENUM(UserRole, name="user_role_enum", create_type=True),
         nullable=False,
         default=UserRole.USER,
         server_default='user'
     )
-    # books: Mapped[List["Book"]] = relationship(back_populates="user",
+    # books: Mapped[List["BookModel"]] = relationship(back_populates="user",
     #     cascade="all, delete-orphan")
 
     def __repr__(self):

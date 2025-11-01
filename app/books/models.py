@@ -7,7 +7,7 @@ from sqlalchemy import String, Integer
 from app.db.base import Base
 
 
-class Book(Base):
+class BookModel(Base):
     __tablename__ = "books"
 
     bid: Mapped[uuid.UUID] = mapped_column(

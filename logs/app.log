@@ -1,5 +1,8 @@
-2025-10-31 17:51:06 | [32mINFO[0m | app:get_all_books:16 | Found 5 books
-2025-10-31 18:03:12 | [32mINFO[0m | app:books/routes.py/get_all_books:16 | Found 5 books
-2025-10-31 18:04:26 | [32mINFO[0m | app:books/routes.py|get_all_books:16 | Found 5 books
-2025-10-31 18:04:47 | [32mINFO[0m | app:books/routes.py | get_all_books:16 | Found 5 books
-2025-10-31 18:05:20 | [31mERROR[0m | app:books/routes.py | get_all_books:16 | Found 5 books
+2025-11-01 16:01:20 | [32mINFO[0m | app:books/routes.py|get_all_books:16 | Found 5 books
+2025-11-01 16:02:48 | [32mINFO[0m | app:books/routes.py|get_all_books:16 | Found 5 books
+2025-11-01 16:03:51 | [32mINFO[0m | app:books/routes.py|get_all_books:16 | Found 5 books
+2025-11-01 16:04:34 | [32mINFO[0m | app:books/routes.py|get_all_books:16 | Found 6 books
+2025-11-01 16:18:11 | [32mINFO[0m | app:books/routes.py|get_all_books:18 | Found 6 books
+2025-11-01 16:18:23 | [32mINFO[0m | app:books/routes.py|get_all_books:18 | Found 6 books
+2025-11-01 16:24:06 | [32mINFO[0m | app:books/routes.py|get_all_books:18 | Found 6 books
+2025-11-01 16:30:33 | [32mINFO[0m | app:books/routes.py|get_all_books:16 | Found 5 books

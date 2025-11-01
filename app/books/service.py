@@ -1,9 +1,9 @@
-from typing import  Optional, List
+from typing import Optional, Sequence
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 import uuid
 
-from app.books.models import Book
+from app.books.models import BookModel
 from app.books.schemas import BookCreate, BookUpdate
 
 
@@ -11,21 +11,21 @@ class BookService:
     def __init__(self, db: AsyncSession):
         self.db = db
 
-    async def create_book(self, book_data: BookCreate) -> Book:
-        new_book = Book(**book_data.model_dump())
+    async def create_book(self, book_data: BookCreate) -> BookModel:
+        new_book = BookModel(**book_data.model_dump())
         self.db.add(new_book)
         await self.db.commit()
         await self.db.refresh(new_book)
         return new_book
 
 
-    async def get_book(self, book_id: uuid.UUID) -> Optional[Book]:
+    async def get_book(self, book_id: uuid.UUID) -> Optional[BookModel]:
         result = await self.db.execute(
-            select(Book).where(Book.id == book_id))
+            select(BookModel).where(BookModel.bid == book_id))
         return result.scalar_one_or_none()
 
 
-    async def update_book(self, book_id: uuid.UUID, book_data: BookUpdate) -> Optional[Book]:
+    async def update_book(self, book_id: uuid.UUID, book_data: BookUpdate) -> Optional[BookModel]:
         book = await self.get_book(book_id)
         if not book:
             return None
@@ -46,7 +46,8 @@ class BookService:
         return True
 
 
-    async def list_books(self)-> List[Book]:
-        results = await self.db.execute(select(Book))
-        return list(results.scalars().all())
+    async def list_books(self)-> Sequence[BookModel]:
+        results = await self.db.execute(select(BookModel))
+        books = results.scalars().all()
+        return books
 
