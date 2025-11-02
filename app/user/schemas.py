@@ -16,7 +16,7 @@ class UserBase(BaseModel):
     is_active: bool = Field(default=True)
     created_at: datetime
     updated_at: datetime
-    role: UserRole = Field(default=UserRole.USER)
+    role: UserRole = Field(default=UserRole.user)
 
 
 class UserCreate(BaseModel):
@@ -55,6 +55,10 @@ class UserDelete(BaseModel):
 
 class UserResponse(UserBase):
     uid: uuid.UUID
+    username: str = Field(..., min_length=1, max_length=8)
+    email: EmailStr
+    first_name: str = Field(..., min_length=3)
+    last_name: str = Field(..., min_length=3)
 
 
 

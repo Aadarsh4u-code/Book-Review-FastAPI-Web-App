@@ -2,7 +2,7 @@ import uuid
 from typing import List, TYPE_CHECKING
 from datetime import datetime
 from sqlalchemy import String, Boolean, func
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship, validates
 from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP, ENUM
 
 # from app.books.models import BookModel
@@ -23,7 +23,7 @@ class UserModel(Base):
     uid: Mapped[uuid.UUID] = mapped_column(
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, unique=True, nullable=False)
     username: Mapped[str] = mapped_column(String, nullable=False)
-    email: Mapped[str] = mapped_column(String, nullable=False)
+    email: Mapped[str] = mapped_column(String, nullable=False, unique=True)
     first_name: Mapped[str] = mapped_column(String, nullable=False)
     last_name: Mapped[str] = mapped_column(String, nullable=False)
     hashed_password: Mapped[str] = mapped_column(String, nullable=False)
@@ -35,11 +35,12 @@ class UserModel(Base):
     role: Mapped[UserRole] = mapped_column(
         ENUM(UserRole, name="user_role_enum", create_type=True),
         nullable=False,
-        default=UserRole.USER,
+        default=UserRole.user,
         server_default='user'
     )
     # books: Mapped[List["BookModel"]] = relationship(back_populates="user",
     #     cascade="all, delete-orphan")
+
 
     def __repr__(self):
         return f"<User {self.username}>"

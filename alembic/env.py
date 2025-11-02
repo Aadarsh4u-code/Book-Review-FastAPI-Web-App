@@ -12,8 +12,8 @@ from app.core.config import setting  # Your settings
 
 # Import ALL your models so Alembic can detect them
 ## ---Add more as you create them --- ###
-from app.books.models import Book
-from app.auth.models import User
+from app.books.models import BookModel
+from app.user.models import UserModel
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
