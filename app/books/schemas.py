@@ -31,6 +31,7 @@ class BookBase(BaseModel):
 class BookCreate(BookBase):
     pass
 
+
 class BookUpdate(BaseModel):
     title: Optional[str] = None
     author: Optional[str] = None
@@ -41,6 +42,7 @@ class BookUpdate(BaseModel):
     model_config = ConfigDict(
         from_attributes=True
     )
+
 
 class BookRead(BookBase):
     bid: uuid.UUID

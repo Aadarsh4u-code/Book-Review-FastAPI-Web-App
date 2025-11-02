@@ -2,10 +2,10 @@ from typing import List
 
 from fastapi import APIRouter, status
 
-from .schemas import UserCreate
+from .schemas import UserCreate, UserResponse
 
 user_router = APIRouter()
 
-@user_router.post("/signup", response_model=UserCreate, status_code=status.HTTP_201_CREATED)
-async def create_user_account(user_data: UserCreate):
+@user_router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
+async def create_user(user_data: UserCreate):
     pass

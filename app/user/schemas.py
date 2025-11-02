@@ -53,8 +53,8 @@ class UserDelete(BaseModel):
     uid: uuid.UUID
 
 
-class UserRead(UserBase):
-    pass
+class UserResponse(UserBase):
+    uid: uuid.UUID
 
 
 
