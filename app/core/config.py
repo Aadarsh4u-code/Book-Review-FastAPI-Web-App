@@ -13,6 +13,11 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRY: int = 30 # minutes
     REFRESH_TOKEN_EXPIRY: int = 1 # days
     EMAIL_TOKEN_EXPIRY: int = 60 * 60 # 1 Hour
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_URL: str = ""
+    JTI_EXPIRY: int = 60 * 60 # 1 hour
+
 
     model_config = SettingsConfigDict(
         env_file= os.path.join(os.getcwd(), ".env"), # absolute path to .env

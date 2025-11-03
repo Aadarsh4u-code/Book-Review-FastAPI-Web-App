@@ -6,6 +6,9 @@ from pydantic import BaseModel
 from sqlalchemy.sql.annotation import Annotated
 
 from app.core.security import decode_jwt_token
+from app.db.redis import token_in_blocklist
+
+
 # from app.core.token_blocklist import is_token_revoked
 
 class TokenBearer(HTTPBearer):
@@ -22,29 +25,25 @@ class TokenBearer(HTTPBearer):
         payload = decode_jwt_token(token)
 
         if not self.is_valid_token(token):
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Invalid token")
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
+                                detail={"error": "JWT token is invalid or revoked.",
+                                        "resolution": "Get new token."})
 
-        # if payload['refresh']:
-        #     raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Provide access token")
+        if await token_in_blocklist(payload.get("jti")):
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
+                                detail={"error": "JWT token is invalid or revoked.",
+                                        "resolution": "Get new token."})
 
         self.verify_token_data(payload)
         return payload
-        # try:
-        #     payload = decode_jwt_token(token)
-        # except Exception:
-        #     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
-
-
-
 
         # if await is_token_revoked(payload.get("jti")):
         #     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token revoked")
 
-
     @staticmethod
     def is_valid_token(token: str) -> bool:
         payload = decode_jwt_token(token)
-        return True if payload is not None else False
+        return payload is not None
 
     def verify_token_data(self, payload: dict):
         raise NotImplementedError("This method is not implemented please override this method in subclass.")
@@ -73,7 +72,6 @@ class RefreshTokenBearer(TokenBearer):
 #     return RoleBearer()
 
 
-
 #################--------Dependencies-----------########################
 
 access_token_bearer = AccessTokenBearer()
@@ -81,4 +79,3 @@ AccessTokenDep = Depends(access_token_bearer)
 
 refresh_token_bearer = RefreshTokenBearer()
 RefreshTokenDep = Depends(refresh_token_bearer)
-

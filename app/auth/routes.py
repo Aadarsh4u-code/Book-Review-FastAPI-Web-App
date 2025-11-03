@@ -4,8 +4,9 @@ from datetime import timezone, datetime
 from fastapi import APIRouter, HTTPException, status
 from fastapi.responses import JSONResponse
 
-from app.auth.dependencies import RefreshTokenDep
+from app.auth.dependencies import RefreshTokenDep, AccessTokenDep
 from app.core.security import verify_password, create_jwt_token
+from app.db.redis import add_jti_to_blocklist
 from app.user.dependencies import UserServiceDep
 from app.user.models import UserModel
 from app.user.schemas import UserCreate, UserBase, UserLogin
@@ -70,3 +71,14 @@ async def get_new_access_token(token_details: dict = RefreshTokenDep) -> JSONRes
             "access_token": new_access_token
         })
     raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Token expired")
+
+
+@auth_router.get("/logout")
+async def revoke_token(token_details=AccessTokenDep) -> JSONResponse:
+    jti = token_details.get("jti")
+    await add_jti_to_blocklist(jti)
+    return JSONResponse(
+        content={
+            "message": "Logout successful"},
+        status_code=status.HTTP_200_OK
+    )
