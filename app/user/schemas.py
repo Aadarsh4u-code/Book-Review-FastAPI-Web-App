@@ -1,7 +1,6 @@
 import uuid
 from datetime import datetime
 
-
 from pydantic import BaseModel, EmailStr, Field, ConfigDict
 from app.shared.utils import UserRole
 
@@ -53,13 +52,8 @@ class UserDelete(BaseModel):
     uid: uuid.UUID
 
 
-class UserResponse(UserBase):
-    uid: uuid.UUID
-    username: str = Field(..., min_length=1, max_length=8)
-    email: EmailStr
-    first_name: str = Field(..., min_length=3)
-    last_name: str = Field(..., min_length=3)
-
-
+class UserLogin(BaseModel):
+    email: EmailStr = Field(..., min_length=1, max_length=30)
+    password: str = Field(..., min_length=6)
 
 

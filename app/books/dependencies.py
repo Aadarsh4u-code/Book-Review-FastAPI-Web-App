@@ -15,4 +15,4 @@ async def get_book_service(db_session: AsyncSession = Depends(get_session)):
     return BookService(db_session)
 
 
-book_service_dep: TypeAlias = Annotated[BookService, Depends(get_book_service)]
+BookServiceDep: TypeAlias = Annotated[BookService, Depends(get_book_service)]

@@ -11,4 +11,4 @@ async def get_user_service(db_session: AsyncSession = Depends(get_session)):
     return UserService(db_session)
 
 
-user_service_dep: TypeAlias = Annotated[UserService, Depends(get_user_service)]
+UserServiceDep: TypeAlias = Annotated[UserService, Depends(get_user_service)]

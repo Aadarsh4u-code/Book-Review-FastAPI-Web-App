@@ -28,3 +28,5 @@ alembic history --verbose
 ### Show SQL without running
 alembic upgrade head --sql
 
+### TO generate secret key
+openssl rand -hex 32
