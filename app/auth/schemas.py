@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional, Literal
 from pydantic import BaseModel, EmailStr
 
@@ -23,17 +24,35 @@ class TokenResponse(BaseModel):
 
 class MeResponse(BaseModel):
     uid: str
+    username: str
     email: EmailStr
+    first_name: str
+    last_name: str
+    is_verified: bool
+    is_active: bool
+    created_at: datetime
+    updated_at: datetime
     role: str
 
     @classmethod
     def from_user(cls, user):
         return cls(
             uid=str(user.uid),
+            username=user.username,
             email=user.email,
-            role=user.role.value
+            first_name=user.first_name,
+            last_name=user.last_name,
+            is_verified=user.is_verified,
+            is_active=user.is_active,
+            created_at=user.created_at,
+            updated_at=user.updated_at,
+            role=user.role.value  # Convert enum to string
         )
 
+class UserBasicDetails(BaseModel):
+    uid: str
+    email: EmailStr
+    role: str
 
 class TokenPayload(BaseModel):
     exp: int
@@ -42,7 +61,7 @@ class TokenPayload(BaseModel):
     jti: str
     sub: str
     refresh: bool
-    user: dict
+    user: UserBasicDetails
 
 
 

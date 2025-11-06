@@ -160,3 +160,6 @@ Traceback (most recent call last):
     raise JWTError(e)
 jose.exceptions.JWTError: Signature verification failed.
 2025-11-06 15:27:43 | [32mINFO[0m | app:books/routes.py|get_all_books:17 | Found 5 books
+2025-11-06 20:36:51 | [32mINFO[0m | app:books/routes.py|get_all_books:19 | Found 5 books
+2025-11-06 20:38:25 | [32mINFO[0m | app:books/routes.py|get_all_books:19 | Found 5 books
+2025-11-06 20:42:22 | [32mINFO[0m | app:books/routes.py|get_all_books:19 | Found 5 books

@@ -25,7 +25,7 @@ class UserService:
         return user
 
 
-    async def get_by_id(self, user_id: uuid.UUID) -> Optional[UserModel]:
+    async def get_user_by_id(self, user_id: uuid.UUID) -> Optional[UserModel]:
         result = await self.db.execute(
             select(UserModel).where(UserModel.uid == user_id)
         )

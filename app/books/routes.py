@@ -2,17 +2,23 @@ import uuid
 from typing import List
 from fastapi import APIRouter, HTTPException, status
 
-from app.auth.dependencies import AccessTokenDep
+from app.auth.dependencies import AccessTokenDep, get_role_checker_dep
 from app.books.models import BookModel
 from app.books.dependencies import BookServiceDep
 from app.books.schemas import BookUpdate, BookRead, BookCreate
 from app.core.logger import logger
+from app.shared.utils import UserRole
 
 book_router = APIRouter()
+role_checker_dep = get_role_checker_dep([UserRole.admin])
 
 
 @book_router.get("/", response_model=List[BookRead], status_code=status.HTTP_200_OK)
-async def get_all_books(service: BookServiceDep, user_details=AccessTokenDep):
+async def get_all_books(
+        service: BookServiceDep,
+        user_details=AccessTokenDep,
+        dp=role_checker_dep
+):
     book_list = await service.list_books()
     logger.info(f"Found {len(book_list)} books")
     if not book_list:
@@ -21,12 +27,20 @@ async def get_all_books(service: BookServiceDep, user_details=AccessTokenDep):
 
 
 @book_router.post("/", response_model=BookRead, status_code=status.HTTP_201_CREATED)
-async def create_a_book(book_data: BookCreate, service: BookServiceDep) -> BookModel:
+async def create_a_book(
+        book_data: BookCreate,
+        service: BookServiceDep,
+        dp=role_checker_dep
+) -> BookModel:
     return await service.create_book(book_data)
 
 
 @book_router.get("/{book_id}", response_model=BookRead, status_code=status.HTTP_200_OK)
-async def get_a_book(service: BookServiceDep, book_id: uuid.UUID) -> BookModel:
+async def get_a_book(
+        service: BookServiceDep,
+        book_id: uuid.UUID,
+        dp=role_checker_dep
+) -> BookModel:
     book = await service.get_book(book_id)
     if not book:
         raise HTTPException(status_code=404, detail="Book not found")
@@ -34,7 +48,12 @@ async def get_a_book(service: BookServiceDep, book_id: uuid.UUID) -> BookModel:
 
 
 @book_router.patch("/{book_id}", response_model=BookUpdate)
-async def update_a_book(book_update_data: BookUpdate, service: BookServiceDep, book_id: uuid.UUID) -> BookModel:
+async def update_a_book(
+        book_update_data: BookUpdate,
+        service: BookServiceDep,
+        book_id: uuid.UUID,
+        dp=role_checker_dep
+) -> BookModel:
     book_to_updated = await service.update_book(book_id, book_update_data)
     if not book_to_updated:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Book not found")
@@ -42,7 +61,11 @@ async def update_a_book(book_update_data: BookUpdate, service: BookServiceDep, b
 
 
 @book_router.delete("/{book_id}", status_code=status.HTTP_200_OK)
-async def delete_a_book(service: BookServiceDep, book_id: uuid.UUID) -> dict:
+async def delete_a_book(
+        service: BookServiceDep,
+        book_id: uuid.UUID,
+        dp=role_checker_dep
+) -> dict:
     success = await service.delete_book(book_id)
     if not success:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Book not found')

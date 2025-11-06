@@ -75,7 +75,7 @@ class AuthService:
         if await redis_client.is_token_revoked(jti):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Refresh token revoked")
 
-        user = await self.user_service.get_by_id(user_id)
+        user = await self.user_service.get_user_by_id(user_id)
         if not user or not user.is_active:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not active")
 

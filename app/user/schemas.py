@@ -7,13 +7,13 @@ from app.shared.utils import UserRole
 
 
 class UserBase(BaseModel):
-    username: str = Field(..., min_length=1, max_length=8)
+    username: str
     email: EmailStr
-    first_name: str = Field(..., min_length=3)
-    last_name: str = Field(..., min_length=3)
+    first_name: str
+    last_name: str
     hashed_password: str = Field(..., exclude=True)
-    is_verified: bool = Field(default=False)
-    is_active: bool = Field(default=True)
+    is_verified: bool
+    is_active: bool
     created_at: datetime
     updated_at: datetime
     role: UserRole = Field(default=UserRole.user)
@@ -26,7 +26,7 @@ class UserCreate(BaseModel):
     last_name: str = Field(..., min_length=3)
     password: str = Field(..., min_length=6)
     role: Optional[UserRole] = UserRole.user
-    is_active: Optional[bool] = True
+    is_active: Optional[bool] = False
 
     model_config = ConfigDict(
         from_attributes = True,
@@ -47,7 +47,7 @@ class UserUpdate(BaseModel):
     first_name: str = Field(..., min_length=3)
     last_name: str = Field(..., min_length=3)
     is_verified: bool = Field(default=False)
-    is_active: bool = Field(default=True)
+    is_active: bool = Field(default=False)
     role: UserRole
 
 
