@@ -1,84 +1,49 @@
-# API endpoints (/login, /register, /verify-email)
-from datetime import timezone, datetime
-
 from fastapi import APIRouter, HTTPException, status
-from fastapi.responses import JSONResponse
 
-from app.auth.dependencies import RefreshTokenDep, AccessTokenDep
-from app.core.security import verify_password, create_jwt_token
-from app.db.redis import add_jti_to_blocklist
+from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep
+from app.auth.schemas import MeResponse, TokenResponse, TokenPayload
 from app.user.dependencies import UserServiceDep
-from app.user.models import UserModel
-from app.user.schemas import UserCreate, UserBase, UserLogin
+from app.user.schemas import UserCreate, UserLogin
 
 auth_router = APIRouter()
 
 
 # Register User
-@auth_router.post("/signup", response_model=UserBase, status_code=status.HTTP_201_CREATED)
-async def signup(form_data: UserCreate, service: UserServiceDep) -> UserModel:
-    existing_user = await service.check_user_exists(form_data.email)
-    if existing_user:
+@auth_router.post("/signup", response_model=MeResponse, status_code=status.HTTP_201_CREATED)
+async def signup(form_data: UserCreate, user_service: UserServiceDep):
+    # Check if email exists
+    if await user_service.check_user_exists(form_data.email):
         raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT, detail="User with email already exists"
+            status_code=status.HTTP_409_CONFLICT,
+            detail="User with this email already exists"
         )
-    new_user = await service.create_user(form_data)
-    return new_user
+    # Create user
+    new_user = await user_service.create_user(form_data)
+    # Return serialized response model
+    return MeResponse.from_user(new_user)
 
 
 # Login / generate access + refresh tokens
-@auth_router.post("/login", status_code=status.HTTP_200_OK)
-async def login(form_data: UserLogin, service: UserServiceDep) -> JSONResponse:
-    user_data = await service.get_user_by_email(form_data.email)
-    if user_data is not None:
-        is_valid_password = verify_password(form_data.password, user_data.hashed_password)
-        if is_valid_password:
-            user_data_dict = {
-                "uid": str(user_data.uid),
-                "email": user_data.email,
-                "role": user_data.role
-            }
-            access_token = create_jwt_token(user_data_dict)
-            refresh_token = create_jwt_token(user_data_dict, refresh=True)
-
-            return JSONResponse(
-                content={
-                    "message": "Login successful",
-                    "access_token": access_token,
-                    "refresh_token": refresh_token,
-                    "token_type": "Bearer",
-                    "user_details": {
-                        "uid": str(user_data.uid),
-                        "email": user_data.email,
-                    }
-
-                },
-                status_code=status.HTTP_200_OK,
-            )
-
-    raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid Credentials.")
+@auth_router.post("/login", response_model=TokenResponse, status_code=status.HTTP_200_OK)
+async def login(credentials: UserLogin,auth_service : AuthServiceDep):
+    return await auth_service.login(email=credentials.email,password=credentials.password)
 
 
-# refresh expired access token
-@auth_router.post("/refresh_token", status_code=status.HTTP_200_OK)
-async def get_new_access_token(token_details: dict = RefreshTokenDep) -> JSONResponse:
-    expiry_timestamp = token_details.get("exp")
-    if expiry_timestamp is None:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token missing expiration")
-    if datetime.now(timezone.utc).timestamp() < expiry_timestamp:
-        new_access_token = create_jwt_token(user_data=token_details.get("user"))
-        return JSONResponse(content={
-            "access_token": new_access_token
-        })
-    raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Token expired")
+@auth_router.post("/refresh", response_model=TokenResponse)
+async def refresh(auth_service: AuthServiceDep, token: TokenPayload = RefreshTokenDep):
+    return await auth_service.refresh(token.model_dump())
+
+@auth_router.post("/logout")
+async def logout(auth_service: AuthServiceDep, token: TokenPayload = AccessTokenDep):
+    return await auth_service.logout(token.model_dump())
+
+@auth_router.post("/revoke")
+async def revoke_all(auth_service: AuthServiceDep, token: TokenPayload = AccessTokenDep):
+    return await auth_service.revoke_all(token.model_dump())
+
+@auth_router.get("/me", response_model=MeResponse)
+async def me(token: TokenPayload = AccessTokenDep):
+    user = token.user
+    return MeResponse(uid=user["uid"], email=user["email"], role=user["role"])
 
 
-@auth_router.get("/logout")
-async def revoke_token(token_details=AccessTokenDep) -> JSONResponse:
-    jti = token_details.get("jti")
-    await add_jti_to_blocklist(jti)
-    return JSONResponse(
-        content={
-            "message": "Logout successful"},
-        status_code=status.HTTP_200_OK
-    )

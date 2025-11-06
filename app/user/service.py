@@ -1,3 +1,4 @@
+import uuid
 from typing import Optional
 
 from fastapi import HTTPException, status
@@ -6,7 +7,7 @@ from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.security import get_hash_password
+from app.core.security import get_hash_password, verify_password
 from app.user.models import UserModel
 from app.user.schemas import UserCreate, UserUpdate, UserDelete
 
@@ -24,9 +25,25 @@ class UserService:
         return user
 
 
+    async def get_by_id(self, user_id: uuid.UUID) -> Optional[UserModel]:
+        result = await self.db.execute(
+            select(UserModel).where(UserModel.uid == user_id)
+        )
+        return result.scalar_one_or_none()
+
+
     async def check_user_exists(self, user_email: EmailStr) -> bool:
         existing_user = await self.get_user_by_email(user_email)
         return True if existing_user is not None else False
+
+
+    async def authenticate_user(self, email: EmailStr, password: str) -> Optional[UserModel]:
+        user = await self.get_user_by_email(email)
+        if not user:
+            return None
+        if not verify_password(password, user.hashed_password):
+            return None
+        return user
 
 
     async def create_user(self, user_data: UserCreate) -> UserModel:
@@ -36,16 +53,9 @@ class UserService:
             **user,
             hashed_password = get_hash_password(user_data.password)
         )
-        print("new_user", new_user)
         self.db.add(new_user)
-        try:
-            await self.db.commit()
-            await self.db.refresh(new_user)
-        except IntegrityError:
-            await self.db.rollback()
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="Something went wrong with Database.")
+        await self.db.flush()  # just flush (no commit needed)
+        await self.db.refresh(new_user)
         return new_user
 
     async def update_user(self, user_data: UserUpdate) -> Optional[UserModel]:

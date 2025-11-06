@@ -1,13 +1,14 @@
 import uuid
-from datetime import timedelta, datetime, timezone
-from typing import Optional
+from datetime import timedelta
+from typing import Optional, Dict, Any
 
 from passlib.context import CryptContext
 from jose import jwt, JWTError, ExpiredSignatureError
 # from itsdangerous import URLSafeTimedSerializer
 
-from app.core.config import setting
+from app.core.config import settings
 from app.core.logger import logger
+from app.shared.utils import now_utc_dt
 
 ###--- Constant Definition ---###
 bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -25,53 +26,62 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return bcrypt_context.verify(plain_password, hashed_password)
 
 
-def create_jwt_token(user_data: dict, expires_delta: Optional[timedelta] = None, refresh: bool = False) -> str:
+def create_jwt_token(user_data: dict, *, expires_delta: Optional[timedelta] = None, refresh: bool = False) -> str:
     """ Create JWT Access or Refresh Token.
         - Includes standard claims (exp, iat, jti, sub)
         - Supports custom expiry and refresh flag
     """
+    current_time = now_utc_dt()
+
     # Default expiry times
-    if expires_delta is None:
-        expires_delta = timedelta(days=setting.REFRESH_TOKEN_EXPIRY) if refresh else timedelta(
-            minutes=setting.ACCESS_TOKEN_EXPIRY)
+    if expires_delta:
+        expire = current_time + expires_delta
+    else:
+        expire = current_time + (
+            settings.refresh_token_expiry if refresh
+            else settings.access_token_expiry
+        )
 
-    # Current UTC time
-    now_utc = datetime.now(timezone.utc)
-
-    # Base payload
     payload = {
-        "sub": str(user_data.get("id") or user_data.get("uid")), # subject = user id
-        "refresh": refresh,
-        "iat": int(now_utc.timestamp()),
-        "exp": int((now_utc + expires_delta).timestamp()),
+        "exp": expire,
+        "iat": current_time,
+        "nbf": current_time,
         "jti": str(uuid.uuid4()),  # unique token identifier (for revocation)
-        "user": user_data,  # optional full user payload
+        "sub": str(user_data["uid"]), # subject = user id
+        "refresh": refresh,
+        "user": {
+            "uid": str(user_data["uid"]),
+            "email": user_data["email"],
+            "role": user_data["role"]
+        },
     }
 
+    if settings.JWT_ISSUER:
+        payload["iss"] = settings.JWT_ISSUER
+
+    if settings.JWT_AUDIENCE:
+        payload["aud"] = settings.JWT_AUDIENCE
+
     # Encode JWT
-    encoded_jwt = jwt.encode(payload, setting.JWT_SECRET_KEY, algorithm=setting.JWT_ALGORITHM)
+    encoded_jwt = jwt.encode(payload, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
     return encoded_jwt
 
 
-def decode_jwt_token(token: str) -> Optional[dict]:
+def decode_jwt_token(token: str) -> Optional[Dict[str, Any]]:
     """
     Decode and validate a JWT token.
     Returns the decoded payload if valid, else None.
     """
+
     try:
         payload = jwt.decode(
             token,
-            key=setting.JWT_SECRET_KEY,
-            algorithms=[setting.JWT_ALGORITHM],
-            options={"verify_exp": True}
+            key=settings.JWT_SECRET_KEY,
+            algorithms=[settings.JWT_ALGORITHM],
+            audience=settings.JWT_AUDIENCE,
+            issuer=settings.JWT_ISSUER,
+            options={"verify_exp": False}
         )
-
-        # Check if token is expired manually (optional)
-        exp = payload.get("exp")
-        if exp and datetime.now(timezone.utc).timestamp() > exp:
-            logger.warning("Token expired")
-            return None
-
         return payload
 
     except ExpiredSignatureError:
@@ -79,7 +89,7 @@ def decode_jwt_token(token: str) -> Optional[dict]:
         return None
 
     except JWTError as e:
-        logger.exception("Invalid JWT token")
+        logger.exception(f"{e}, Invalid JWT token")
         return None
 
 

@@ -15,8 +15,6 @@ from app.shared.utils import UserRole
 #     from app.books.models import BookModel
 
 
-
-
 class UserModel(Base):
     __tablename__ = 'users'
 
@@ -43,4 +41,4 @@ class UserModel(Base):
 
 
     def __repr__(self):
-        return f"<User {self.username}>"
+        return f"<User(id={self.uid}, email={self.email}, role={self.role})>"

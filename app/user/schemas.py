@@ -1,5 +1,6 @@
 import uuid
 from datetime import datetime
+from typing import Optional
 
 from pydantic import BaseModel, EmailStr, Field, ConfigDict
 from app.shared.utils import UserRole
@@ -24,6 +25,8 @@ class UserCreate(BaseModel):
     first_name: str = Field(..., min_length=3)
     last_name: str = Field(..., min_length=3)
     password: str = Field(..., min_length=6)
+    role: Optional[UserRole] = UserRole.user
+    is_active: Optional[bool] = True
 
     model_config = ConfigDict(
         from_attributes = True,

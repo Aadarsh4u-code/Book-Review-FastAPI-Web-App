@@ -1,1 +1,162 @@
 2025-10-31 18:05:20 | [0m[31mERROR[0m[0m | app:books/routes.py | get_all_books:16 | Found 5 books
+2025-11-06 00:55:23 | [0m[0m[31mERROR[0m[0m[0m | app:core/security.py|decode_jwt_token:101 | Not enough segments, Invalid JWT token
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 74, in verify
+    header, payload, signing_input, signature = _load(token)
+                                                ~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 184, in _load
+    raise JWSError("Not enough segments")
+jose.exceptions.JWSError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/security.py", line 85, in decode_jwt_token
+    payload = jwt.decode(
+        token,
+    ...<4 lines>...
+        options={"verify_exp": True}
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Not enough segments
+2025-11-06 00:57:33 | [0m[0m[31mERROR[0m[0m[0m | app:core/security.py|decode_jwt_token:101 | Not enough segments, Invalid JWT token
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 74, in verify
+    header, payload, signing_input, signature = _load(token)
+                                                ~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 184, in _load
+    raise JWSError("Not enough segments")
+jose.exceptions.JWSError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/security.py", line 85, in decode_jwt_token
+    payload = jwt.decode(
+        token,
+    ...<4 lines>...
+        options={"verify_exp": True}
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Not enough segments
+2025-11-06 01:02:15 | [0m[0m[31mERROR[0m[0m[0m | app:core/security.py|decode_jwt_token:105 | Not enough segments, Invalid JWT token
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 182, in _load
+    header_data = base64url_decode(header_segment)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/utils.py", line 78, in base64url_decode
+    return base64.urlsafe_b64decode(input)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/base64.py", line 134, in urlsafe_b64decode
+    return b64decode(s)
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/base64.py", line 88, in b64decode
+    return binascii.a2b_base64(s, strict_mode=validate)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+binascii.Error: Incorrect padding
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 74, in verify
+    header, payload, signing_input, signature = _load(token)
+                                                ~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 184, in _load
+    raise JWSError("Not enough segments")
+jose.exceptions.JWSError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/security.py", line 89, in decode_jwt_token
+    payload = jwt.decode(
+        token,
+    ...<4 lines>...
+        options={"verify_exp": True}
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Not enough segments
+2025-11-06 02:23:40 | [0m[0m[31mERROR[0m[0m[0m | app:core/security.py|decode_jwt_token:93 | Not enough segments, Invalid JWT token
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 74, in verify
+    header, payload, signing_input, signature = _load(token)
+                                                ~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 184, in _load
+    raise JWSError("Not enough segments")
+jose.exceptions.JWSError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/security.py", line 77, in decode_jwt_token
+    payload = jwt.decode(
+        token,
+    ...<4 lines>...
+        options={"verify_exp": False}
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Not enough segments
+2025-11-06 02:48:17 | [0m[0m[31mERROR[0m[0m[0m | app:core/security.py|decode_jwt_token:97 | Signature verification failed., Invalid JWT token
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 264, in _verify_signature
+    raise JWSSignatureError()
+jose.exceptions.JWSSignatureError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 159, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 77, in verify
+    _verify_signature(signing_input, header, signature, key, algorithms)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jws.py", line 266, in _verify_signature
+    raise JWSError("Signature verification failed.")
+jose.exceptions.JWSError: Signature verification failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/security.py", line 81, in decode_jwt_token
+    payload = jwt.decode(
+        token,
+    ...<4 lines>...
+        options={"verify_exp": False}
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 161, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Signature verification failed.

@@ -1,81 +1,127 @@
-from fastapi import HTTPException, status, Request, Depends
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from typing import List, Dict, TypeAlias, Any, Optional
+from typing import TypeAlias, Annotated
 
-from pydantic import BaseModel
-from sqlalchemy.sql.annotation import Annotated
+from fastapi import HTTPException, status, Depends, Request
+from fastapi.security import HTTPBearer
+from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.auth.schemas import TokenPayload
+from app.auth.service import AuthService
 from app.core.security import decode_jwt_token
-from app.db.redis import token_in_blocklist
+from app.db.redis import redis_client
+from app.db.session import get_db_session
+from app.user.dependencies import get_user_service
+from app.user.service import UserService
 
-
-# from app.core.token_blocklist import is_token_revoked
 
 class TokenBearer(HTTPBearer):
-    def __init__(self, auto_error: bool = True):
+    def __init__(self, auto_error: bool = True, token_type: str = "access"):
         super().__init__(auto_error=auto_error)
+        self.token_type = token_type
 
-    async def __call__(self, request: Request) -> dict:
-        credentials: HTTPAuthorizationCredentials = await super().__call__(request)
-        if not credentials:
+    async def __call__(self, request: Request) -> TokenPayload:
+        # credentials comes from HTTPBearer automatically
+        credentials = await super().__call__(request)
+        if credentials is None:
             raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Missing credentials")
 
         token = credentials.credentials
 
+        # Check if token is empty or malformed
+        if not token:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Empty token provided"
+            )
+
+        if token.count('.') != 2:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail=f"Invalid token format. Expected 3 segments, got {token.count('.') + 1}"
+            )
+
+        # Decode token
         payload = decode_jwt_token(token)
+        if not payload:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid or expired token"
+            )
 
-        if not self.is_valid_token(token):
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
-                                detail={"error": "JWT token is invalid or revoked.",
-                                        "resolution": "Get new token."})
+        # Check revocation - for access tokens, check regular revoked list
+        # For refresh tokens, check user-specific revoked list
+        jti = payload.get("jti")
+        if jti:
+            if payload.get("refresh"):
+                # For refresh tokens, check user-specific revocation
+                user_id = payload.get("user", {}).get("uid")
+                if user_id:
+                    user_refresh_key = f"revoked:user_refresh_tokens:{user_id}:{jti}"
+                    if await redis_client.is_token_revoked(user_refresh_key):
+                        raise HTTPException(
+                            status_code=status.HTTP_401_UNAUTHORIZED,
+                            detail="Refresh token revoked"
+                        )
+            else:
+                # For access tokens, check regular revocation
+                if await redis_client.is_token_revoked(jti):
+                    raise HTTPException(
+                        status_code=status.HTTP_401_UNAUTHORIZED,
+                        detail="Token revoked"
+                    )
 
-        if await token_in_blocklist(payload.get("jti")):
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
-                                detail={"error": "JWT token is invalid or revoked.",
-                                        "resolution": "Get new token."})
+        # Verify token type (access or refresh)
+        await self.verify_token_data(payload)
+        return TokenPayload(**payload)
 
-        self.verify_token_data(payload)
-        return payload
-
-        # if await is_token_revoked(payload.get("jti")):
-        #     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Token revoked")
-
-    @staticmethod
-    def is_valid_token(token: str) -> bool:
-        payload = decode_jwt_token(token)
-        return payload is not None
-
-    def verify_token_data(self, payload: dict):
-        raise NotImplementedError("This method is not implemented please override this method in subclass.")
+    async def verify_token_data(self, payload: dict):
+        NotImplementedError("This method is not implemented please override this method in subclass.")
 
 
 class AccessTokenBearer(TokenBearer):
-
-    def verify_token_data(self, payload: dict):
-        if payload and payload.get("refresh"):
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access token required")
+    async def verify_token_data(self, payload: dict):
+        if payload.get("refresh", False):  # Reject if it's a refresh token
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Access token required"
+            )
 
 
 class RefreshTokenBearer(TokenBearer):
-
-    def verify_token_data(self, payload: dict):
-        if payload and not payload.get("refresh"):
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Refresh token required")
-
-
-# def RoleChecker(allowed_roles: List[str]):
-#     class RoleBearer(AccessTokenBearer):
-#         def verify_token_data(self, token_data: dict):
-#             super().verify_token_data(token_data)
-#             if token_data.get("role") not in allowed_roles:
-#                 raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Insufficient privileges")
-#     return RoleBearer()
+    async def verify_token_data(self, payload: dict):
+        if not payload.get("refresh", False): # Reject if it's NOT a refresh token
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Refresh token required"
+            )
 
 
 #################--------Dependencies-----------########################
+# Export dependencies
+AccessTokenDep = Depends(AccessTokenBearer())
+RefreshTokenDep = Depends(RefreshTokenBearer())
 
-access_token_bearer = AccessTokenBearer()
-AccessTokenDep = Depends(access_token_bearer)
 
-refresh_token_bearer = RefreshTokenBearer()
-RefreshTokenDep = Depends(refresh_token_bearer)
+async def get_auth_service(
+        db_session: AsyncSession = Depends(get_db_session),
+        user_service: UserService = Depends(get_user_service)):
+    return AuthService(db_session, user_service)
+
+AuthServiceDep: TypeAlias = Annotated[AuthService, Depends(get_auth_service)]
+
+
+# Higher Order Function
+def role_checker_factory(allowed_roles: list[str]):
+    """
+    Returns a dependency function that checks if the current user's role is in allowed_roles.
+    """
+
+    async def role_checker(token_payload: TokenPayload = AccessTokenDep):
+        user_role = token_payload.user.get("role")
+        if user_role not in allowed_roles:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Insufficient permissions"
+            )
+        return token_payload
+
+    return role_checker

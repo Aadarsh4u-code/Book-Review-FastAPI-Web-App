@@ -3,11 +3,15 @@ from typing import TypeAlias, Annotated
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db.session import get_session
+from app.db.session import get_db_session
 from app.user.service import UserService
 
 
-async def get_user_service(db_session: AsyncSession = Depends(get_session)):
+async def get_user_service(db_session: AsyncSession = Depends(get_db_session)) -> UserService:
+    """
+        FastAPI dependency that provides a UserService instance
+        with a connected database session.
+    """
     return UserService(db_session)
 
 

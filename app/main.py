@@ -4,8 +4,10 @@ from fastapi import FastAPI
 
 from app.auth.routes import auth_router
 from app.books.routes import book_router
-from app.core.config import setting
+from app.core.config import settings
+from app.db.redis import redis_client
 from app.db.session import init_db
+from app.shared.utils import EnvironmentSchema
 
 version = "v1"
 description = """
@@ -16,25 +18,35 @@ This REST API is able to;
     - Add tags to Books e.t.c.
 """
 
+
+
 version_prefix =f"/api/{version}"
 
 @asynccontextmanager
 async def lifespan(apps: FastAPI):
+    # Startup
     print(f" 🛜 Server is starting... 🛜. ")
 
+    # Initialize Redis
+    await redis_client.init_redis()
+    print("✅ Redis initialized successfully")
+
     # Only auto-create tables in development
-    if setting.ENVIRONMENT == "development":
-        print("📝 Running in DEVELOPMENT mode - auto-creating tables")
+    if settings.ENVIRONMENT == EnvironmentSchema.DEV:
+        print(f"📝 Running in {EnvironmentSchema.DEV} mode - auto-creating tables")
         await init_db()
     else:
-        print("🚀 Running in PRODUCTION mode - use Alembic migrations")
+        print("🚀 Running in {EnvironmentSchema.DEV} mode - use Alembic migrations")
 
-    yield
-    print(f" 🛑 Server has been stopped 🛑. ")
+    yield # App runs here
+
+    # Shutdown
+    await redis_client.close_redis()
+    print(f" 🛑 Server has been stopped 🛑 and Redis closed. ")
 
 
 app = FastAPI(
-    title="Book Review API",
+    title=settings.APP_NAME,
     description=description,
     version=version,
     license_info={"name": "MIT License", "url": "https://opensource.org/license/mit"},
