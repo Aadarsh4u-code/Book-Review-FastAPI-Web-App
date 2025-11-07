@@ -24,6 +24,15 @@ async def get_all_books(
     return book_list
 
 
+@book_router.get("/user/{user_id}", response_model=List[BookRead], status_code=status.HTTP_200_OK)
+async def get_books_by_user_submission(user_id: uuid.UUID, service: BookServiceDep):
+    books = await service.get_books_by_user(user_id)
+    if not books:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No books found")
+    return books
+
+
+
 @book_router.post("/", response_model=BookRead, status_code=status.HTTP_201_CREATED)
 async def create_a_book(
         book_data: BookCreate,

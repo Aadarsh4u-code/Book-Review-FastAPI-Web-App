@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 
-from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep, get_current_user, RoleChecker
+from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep, get_current_user, RoleChecker, \
+    get_role_checker_dep
 from app.auth.schemas import MeResponse, TokenResponse, TokenPayload
 from app.shared.utils import UserRole
 from app.user.dependencies import UserServiceDep
@@ -8,6 +9,7 @@ from app.user.models import UserModel
 from app.user.schemas import UserCreate, UserLogin
 
 auth_router = APIRouter()
+role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin, UserRole.superadmin])
 
 
 # Register User
@@ -46,9 +48,6 @@ async def revoke_all(auth_service: AuthServiceDep, token: TokenPayload = AccessT
     return await auth_service.revoke_all(token.model_dump())
 
 
-@auth_router.get("/me", response_model=MeResponse)
-async def get_me(
-    user: UserModel = Depends(get_current_user),
-    _: bool = Depends(RoleChecker([ UserRole.manager]))
-):
+@auth_router.get("/me", response_model=MeResponse, dependencies=[role_checker_dep])
+async def get_me(user: UserModel = Depends(get_current_user)):
     return MeResponse.from_user(user)

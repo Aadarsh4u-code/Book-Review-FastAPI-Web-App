@@ -1,7 +1,9 @@
 from datetime import datetime
-from typing import Optional, Literal
+from typing import Optional, Literal, List
 from pydantic import BaseModel, EmailStr
 
+from app.books.models import BookModel
+from app.books.schemas import BookBase
 from app.shared.utils import UserRole
 
 
@@ -33,6 +35,7 @@ class MeResponse(BaseModel):
     created_at: datetime
     updated_at: datetime
     role: str
+    books: List[BookBase]
 
     @classmethod
     def from_user(cls, user):
@@ -46,7 +49,8 @@ class MeResponse(BaseModel):
             is_active=user.is_active,
             created_at=user.created_at,
             updated_at=user.updated_at,
-            role=user.role.value  # Convert enum to string
+            role=user.role.value,  # Convert enum to string
+            books=user.books,
         )
 
 class UserBasicDetails(BaseModel):

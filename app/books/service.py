@@ -49,3 +49,8 @@ class BookService:
         books = results.scalars().all()
         return books
 
+
+    async def get_books_by_user(self, user_id: uuid.UUID)-> Sequence[BookModel]:
+        results = await self.db.execute(select(BookModel).where(BookModel.user_uid == user_id))
+        return results.scalars().all()
+

@@ -2,17 +2,15 @@ import uuid
 from typing import List, TYPE_CHECKING
 from datetime import datetime
 from sqlalchemy import String, Boolean, func
-from sqlalchemy.orm import Mapped, mapped_column, relationship, validates
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP, ENUM
-
-# from app.books.models import BookModel
 
 from app.db.base import Base
 from app.shared.utils import UserRole
 
-
-# if TYPE_CHECKING:
-#     from app.books.models import BookModel
+# To fix Circular import
+if TYPE_CHECKING:
+    from app.books.models import BookModel
 
 
 class UserModel(Base):
@@ -32,13 +30,12 @@ class UserModel(Base):
                                                  onupdate=func.now())
     role: Mapped[UserRole] = mapped_column(
         ENUM(UserRole, name="user_role_enum", create_type=True),
-        nullable=False,
-        default=UserRole.user,
-        server_default='user'
+        nullable=False, default=UserRole.user, server_default='user'
     )
-    # books: Mapped[List["BookModel"]] = relationship(back_populates="user",
-    #     cascade="all, delete-orphan")
-
+    books: Mapped[List["BookModel"]] = relationship(
+        back_populates="user", lazy="selectin",
+        cascade="save-update", passive_deletes=True
+    )
 
     def __repr__(self):
         return f"<User(id={self.uid}, email={self.email}, role={self.role})>"

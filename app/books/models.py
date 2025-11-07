@@ -1,12 +1,15 @@
 import uuid
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP
 from sqlalchemy import String, Integer, ForeignKey
 
 from app.db.base import Base
-from app.user.models import UserModel
+
+# To fix Circular import
+if TYPE_CHECKING:
+    from app.user.models import UserModel
 
 
 class BookModel(Base):
@@ -34,10 +37,10 @@ class BookModel(Base):
         UUID(as_uuid=True), ForeignKey("users.uid", ondelete="SET NULL"), nullable=True)
 
     # Relationships
-    # user: Mapped[Optional[UserModel]] = relationship(
-    #     back_populates="books",
-    #     lazy="selectin"
-    # )
+    user: Mapped[Optional["UserModel"]] = relationship(
+        back_populates="books",
+        lazy="selectin"
+    )
 
     def __repr__(self):
         return f"<Book {self.title} by {self.author}>"
