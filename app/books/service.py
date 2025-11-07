@@ -11,10 +11,10 @@ class BookService:
     def __init__(self, db: AsyncSession):
         self.db = db
 
-    async def create_book(self, book_data: BookCreate) -> BookModel:
+    async def create_book(self, book_data: BookCreate, user_uid) -> BookModel:
         new_book = BookModel(**book_data.model_dump())
+        new_book.user_uid = user_uid
         self.db.add(new_book)
-        await self.db.commit()
         await self.db.refresh(new_book)
         return new_book
 
@@ -32,7 +32,6 @@ class BookService:
 
         for field, value in book_data.model_dump(exclude_unset=True).items():
             setattr(book, field, value)
-        await self.db.commit()
         await self.db.refresh(book)
         return book
 
@@ -42,7 +41,6 @@ class BookService:
         if not book:
             return False
         await self.db.delete(book)
-        await self.db.commit()
         return True
 
 

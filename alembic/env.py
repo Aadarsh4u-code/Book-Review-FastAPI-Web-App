@@ -8,7 +8,7 @@ from alembic import context
 
 # Import your Base and settings
 from app.db.base import Base  # Your SQLAlchemy Base
-from app.core.config import setting  # Your settings
+from app.core.config import settings  # Your settings
 
 # Import ALL your models so Alembic can detect them
 ## ---Add more as you create them --- ###
@@ -20,7 +20,7 @@ from app.user.models import UserModel
 config = context.config
 
 # Set the database URL from your settings
-config.set_main_option("sqlalchemy.url", setting.DATABASE_URL)
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

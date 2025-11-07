@@ -1,10 +1,12 @@
 import uuid
 from datetime import datetime, timezone
-from sqlalchemy.orm import Mapped, mapped_column
+from typing import Optional
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP
-from sqlalchemy import String, Integer
+from sqlalchemy import String, Integer, ForeignKey
 
 from app.db.base import Base
+from app.user.models import UserModel
 
 
 class BookModel(Base):
@@ -28,19 +30,14 @@ class BookModel(Base):
         default=lambda: datetime.now(timezone.utc),
         onupdate=lambda: datetime.now(timezone.utc)
     )
+    user_uid: Mapped[Optional[uuid.UUID]] = mapped_column(
+        UUID(as_uuid=True), ForeignKey("users.uid", ondelete="SET NULL"), nullable=True)
 
-    """Alternative: Use database server time (Recommended)
-      created_at: Mapped[datetime] = mapped_column(
-        TIMESTAMP(timezone=True), 
-        server_default=func.now()
-    )
-    updated_at: Mapped[datetime] = mapped_column(
-        TIMESTAMP(timezone=True),
-        server_default=func.now(),
-        onupdate=func.now()
-    )
-    
-    """
+    # Relationships
+    # user: Mapped[Optional[UserModel]] = relationship(
+    #     back_populates="books",
+    #     lazy="selectin"
+    # )
 
     def __repr__(self):
         return f"<Book {self.title} by {self.author}>"

@@ -9,15 +9,13 @@ from app.books.schemas import BookUpdate, BookRead, BookCreate
 from app.core.logger import logger
 from app.shared.utils import UserRole
 
-book_router = APIRouter()
-role_checker_dep = get_role_checker_dep([UserRole.admin])
+role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin])
+book_router = APIRouter(dependencies=[role_checker_dep])
 
 
 @book_router.get("/", response_model=List[BookRead], status_code=status.HTTP_200_OK)
 async def get_all_books(
-        service: BookServiceDep,
-        user_details=AccessTokenDep,
-        dp=role_checker_dep
+        service: BookServiceDep
 ):
     book_list = await service.list_books()
     logger.info(f"Found {len(book_list)} books")
@@ -30,16 +28,16 @@ async def get_all_books(
 async def create_a_book(
         book_data: BookCreate,
         service: BookServiceDep,
-        dp=role_checker_dep
+        token_payload=AccessTokenDep,
 ) -> BookModel:
-    return await service.create_book(book_data)
+    user_uid = token_payload.get("user")['uid']
+    return await service.create_book(book_data, user_uid)
 
 
 @book_router.get("/{book_id}", response_model=BookRead, status_code=status.HTTP_200_OK)
 async def get_a_book(
         service: BookServiceDep,
         book_id: uuid.UUID,
-        dp=role_checker_dep
 ) -> BookModel:
     book = await service.get_book(book_id)
     if not book:
@@ -52,7 +50,6 @@ async def update_a_book(
         book_update_data: BookUpdate,
         service: BookServiceDep,
         book_id: uuid.UUID,
-        dp=role_checker_dep
 ) -> BookModel:
     book_to_updated = await service.update_book(book_id, book_update_data)
     if not book_to_updated:
@@ -64,7 +61,6 @@ async def update_a_book(
 async def delete_a_book(
         service: BookServiceDep,
         book_id: uuid.UUID,
-        dp=role_checker_dep
 ) -> dict:
     success = await service.delete_book(book_id)
     if not success:
