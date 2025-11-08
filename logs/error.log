@@ -160,3 +160,23 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/jose/jwt.py", line 161, in decode
     raise JWTError(e)
 jose.exceptions.JWTError: Signature verification failed.
+2025-11-08 20:07:54 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:42 | (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: EmailSchema(email='test@test.com') (expected str, got EmailSchema)
+[SQL: SELECT users.uid, users.username, users.email, users.first_name, users.last_name, users.hashed_password, users.is_verified, users.is_active, users.created_at, users.updated_at, users.role 
+FROM users 
+WHERE users.email = $1::VARCHAR]
+[parameters: (EmailSchema(email='test@test.com'),)]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-11-08 20:10:44 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:43 | Instance '<ReviewModel at 0x10a29c6e0>' is not persistent within this Session
+2025-11-08 20:14:02 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:43 | Instance '<ReviewModel at 0x10a2ad590>' is not persistent within this Session
+2025-11-08 20:26:58 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:43 | Instance '<ReviewModel at 0x1065786e0>' is not persistent within this Session
+2025-11-08 20:28:51 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:43 | Instance '<ReviewModel at 0x10a0ac6e0>' is not persistent within this Session
+2025-11-08 20:31:18 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:43 | 'book' is an invalid keyword argument for ReviewModel
+2025-11-08 20:34:30 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:44 | 'book' is an invalid keyword argument for ReviewModel
+2025-11-08 20:42:42 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:44 | Instance '<ReviewModel at 0x107a106e0>' is not persistent within this Session
+2025-11-08 20:43:36 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:44 | Instance '<ReviewModel at 0x107a25a90>' is not persistent within this Session
+2025-11-08 20:55:07 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:53 | Failed to add Review: Instance '<ReviewModel at 0x10cf046e0>' is not persistent within this Session
+2025-11-08 21:00:17 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:53 | Failed to add Review: This result object is closed.
+2025-11-08 21:01:10 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:53 | Failed to add Review: This result object is closed.
+2025-11-08 21:01:48 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:53 | Failed to add Review: This result object is closed.
+2025-11-08 21:03:57 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:53 | Failed to add Review: 404: Book not found
+2025-11-08 21:04:54 | [0m[0m[31mERROR[0m[0m[0m | app:reviews/service.py|add_review_to_book:53 | Failed to add Review: 404: Book not found

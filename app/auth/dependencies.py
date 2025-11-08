@@ -1,4 +1,4 @@
-from typing import TypeAlias, Annotated, Optional, List, Any
+from typing import TypeAlias, Annotated, Optional, Any
 
 from fastapi import HTTPException, status, Depends, Request
 from fastapi.security import HTTPBearer

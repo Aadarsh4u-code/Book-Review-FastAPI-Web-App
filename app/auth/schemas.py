@@ -2,7 +2,6 @@ from datetime import datetime
 from typing import Optional, Literal, List
 from pydantic import BaseModel, EmailStr
 
-from app.books.models import BookModel
 from app.books.schemas import BookBase
 from app.shared.utils import UserRole
 

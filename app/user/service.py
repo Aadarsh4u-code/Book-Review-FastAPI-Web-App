@@ -1,10 +1,7 @@
 import uuid
 from typing import Optional
-
-from fastapi import HTTPException, status
 from pydantic import EmailStr
 from sqlalchemy import select
-from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import get_hash_password, verify_password

@@ -44,4 +44,5 @@ async def init_db():
         # (SQLAlchemy discovers them by executing the class definitions)
         from app.books.models import BookModel
         from app.user.models import UserModel
+        from app.reviews.models import ReviewModel
         await conn.run_sync(Base.metadata.create_all)

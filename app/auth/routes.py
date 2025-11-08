@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 
-from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep, get_current_user, RoleChecker, \
-    get_role_checker_dep
+from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep, get_current_user, get_role_checker_dep
 from app.auth.schemas import MeResponse, TokenResponse, TokenPayload
 from app.shared.utils import UserRole
 from app.user.dependencies import UserServiceDep

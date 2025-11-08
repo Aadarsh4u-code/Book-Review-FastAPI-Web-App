@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException, status
 from app.auth.dependencies import AccessTokenDep, get_role_checker_dep
 from app.books.models import BookModel
 from app.books.dependencies import BookServiceDep
-from app.books.schemas import BookUpdate, BookRead, BookCreate
+from app.books.schemas import BookUpdate, BookResponse, BookCreate
 from app.core.logger import logger
 from app.shared.utils import UserRole
 
@@ -13,7 +13,7 @@ role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin])
 book_router = APIRouter(dependencies=[role_checker_dep])
 
 
-@book_router.get("/", response_model=List[BookRead], status_code=status.HTTP_200_OK)
+@book_router.get("/", response_model=List[BookResponse], status_code=status.HTTP_200_OK)
 async def get_all_books(
         service: BookServiceDep
 ):
@@ -24,7 +24,7 @@ async def get_all_books(
     return book_list
 
 
-@book_router.get("/user/{user_id}", response_model=List[BookRead], status_code=status.HTTP_200_OK)
+@book_router.get("/user/{user_id}", response_model=List[BookResponse], status_code=status.HTTP_200_OK)
 async def get_books_by_user_submission(user_id: uuid.UUID, service: BookServiceDep):
     books = await service.get_books_by_user(user_id)
     if not books:
@@ -33,7 +33,7 @@ async def get_books_by_user_submission(user_id: uuid.UUID, service: BookServiceD
 
 
 
-@book_router.post("/", response_model=BookRead, status_code=status.HTTP_201_CREATED)
+@book_router.post("/", response_model=BookResponse, status_code=status.HTTP_201_CREATED)
 async def create_a_book(
         book_data: BookCreate,
         service: BookServiceDep,
@@ -43,7 +43,7 @@ async def create_a_book(
     return await service.create_book(book_data, user_uid)
 
 
-@book_router.get("/{book_id}", response_model=BookRead, status_code=status.HTTP_200_OK)
+@book_router.get("/{book_id}", response_model=BookResponse, status_code=status.HTTP_200_OK)
 async def get_a_book(
         service: BookServiceDep,
         book_id: uuid.UUID,

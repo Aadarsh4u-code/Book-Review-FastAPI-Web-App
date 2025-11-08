@@ -1,7 +1,10 @@
 from pydantic import BaseModel, Field, ConfigDict
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 import uuid
+
+from app.reviews.schemas import ReviewResponse
+
 
 class BookBase(BaseModel):
     title: str = Field(min_length=3)
@@ -44,10 +47,11 @@ class BookUpdate(BaseModel):
     )
 
 
-class BookRead(BookBase):
+class BookResponse(BookBase):
     bid: uuid.UUID
     created_at: datetime
     updated_at: datetime
+    reviews: List[ReviewResponse]
 
     model_config = ConfigDict(
         from_attributes=True

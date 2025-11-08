@@ -11,8 +11,9 @@ from app.shared.utils import UserRole
 # To fix Circular import
 if TYPE_CHECKING:
     from app.books.models import BookModel
+    from app.reviews.models import ReviewModel
 
-
+# ---------- User Model ----------
 class UserModel(Base):
     __tablename__ = 'users'
 
@@ -32,10 +33,17 @@ class UserModel(Base):
         ENUM(UserRole, name="user_role_enum", create_type=True),
         nullable=False, default=UserRole.user, server_default='user'
     )
+    # Relationships
     books: Mapped[List["BookModel"]] = relationship(
+        back_populates="user", lazy="selectin",
+        cascade="save-update", passive_deletes=True
+    )
+    reviews: Mapped[List["ReviewModel"]] = relationship(
         back_populates="user", lazy="selectin",
         cascade="save-update", passive_deletes=True
     )
 
     def __repr__(self):
         return f"<User(id={self.uid}, email={self.email}, role={self.role})>"
+
+

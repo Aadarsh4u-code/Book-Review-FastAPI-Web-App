@@ -1,10 +1,8 @@
+import uuid
 from datetime import datetime, timezone
 from enum import Enum
 
-
-
-
-
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 
 
 ###################--------------------> Utility Schemas <-----------#######################
@@ -23,7 +21,27 @@ class EnvironmentSchema(str, Enum):
 
 
 
+###################--------------------> Pydantic Schemas <-----------#######################
 
+class UIDSchema(BaseModel):
+    uid: uuid.UUID = Field(..., description="Unique identifier")
+
+    model_config = ConfigDict(
+        # for nicer OpenAPI docs and JSON serialization
+        json_schema_extra={
+            "example": {"uid": "c5b89b48-372a-4b57-9b7f-1d935dfec45f"}
+        }
+    )
+
+class EmailSchema(BaseModel):
+    email: EmailStr = Field(..., description="Valid email address")
+
+    model_config = ConfigDict(
+        # for nicer OpenAPI docs and JSON serialization
+        json_schema_extra={
+            "example": {"email": "aadarsh@example.com"}
+        }
+    )
 
 
 

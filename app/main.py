@@ -1,5 +1,4 @@
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI
 
 from app.auth.routes import auth_router
@@ -7,6 +6,7 @@ from app.books.routes import book_router
 from app.core.config import settings
 from app.db.redis import redis_client
 from app.db.session import init_db
+from app.reviews.routes import reviews_router
 from app.shared.utils import EnvironmentSchema
 
 version = "v1"
@@ -64,5 +64,6 @@ app = FastAPI(
 
 app.include_router(auth_router, prefix=f"{version_prefix}/auth", tags=["v1 | 👮🏻‍♀️ Authentication"])
 app.include_router(book_router, prefix=f"{version_prefix}/books", tags=["v1 | 📚 Books"])
+app.include_router(reviews_router, prefix=f"{version_prefix}/reviews", tags=["v1 | 👁️‍🗨️ Reviews"])
 
 
