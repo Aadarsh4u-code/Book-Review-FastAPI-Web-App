@@ -4,9 +4,11 @@ from fastapi import FastAPI
 from app.auth.routes import auth_router
 from app.books.routes import book_router
 from app.core.config import settings
+from app.core.logger import logger
 from app.db.redis import redis_client
 from app.db.session import init_db
 from app.reviews.routes import reviews_router
+from app.shared.exception_handlers import register_exception_handlers
 from app.shared.utils import EnvironmentSchema
 
 version = "v1"
@@ -44,26 +46,34 @@ async def lifespan(apps: FastAPI):
     await redis_client.close_redis()
     print(f" 🛑 Server has been stopped 🛑 and Redis closed. ")
 
+def create_app() -> FastAPI:
+    fastapi_app = FastAPI(
+        title=settings.APP_NAME,
+        description=description,
+        version=version,
+        license_info={"name": "MIT License", "url": "https://opensource.org/license/mit"},
+        lifespan=lifespan,
+        contact={
+            "name": "Aadarsh Kushwaha",
+            "url": "https://github.com/Aadarsh4u-code",
+            "email": "aadarshkushwaha0208@gmail.com",
+        },
+        terms_of_service="https://example.com/book_review_api",
+        openapi_url=f"{version_prefix}/openapi.json",
+        docs_url=f"{version_prefix}/docs",
+        redoc_url=f"{version_prefix}/redoc"
+    )
 
-app = FastAPI(
-    title=settings.APP_NAME,
-    description=description,
-    version=version,
-    license_info={"name": "MIT License", "url": "https://opensource.org/license/mit"},
-    lifespan=lifespan,
-    contact={
-        "name": "Aadarsh Kushwaha",
-        "url": "https://github.com/Aadarsh4u-code",
-        "email": "aadarshkushwaha0208@gmail.com",
-    },
-    terms_of_service="https://example.com/book_review_api",
-    openapi_url=f"{version_prefix}/openapi.json",
-    docs_url=f"{version_prefix}/docs",
-    redoc_url=f"{version_prefix}/redoc"
-)
+    # Register custom exception handlers
+    register_exception_handlers(fastapi_app)
 
-app.include_router(auth_router, prefix=f"{version_prefix}/auth", tags=["v1 | 👮🏻‍♀️ Authentication"])
-app.include_router(book_router, prefix=f"{version_prefix}/books", tags=["v1 | 📚 Books"])
-app.include_router(reviews_router, prefix=f"{version_prefix}/reviews", tags=["v1 | 👁️‍🗨️ Reviews"])
+    # Include routers
+    fastapi_app.include_router(auth_router, prefix=f"{version_prefix}/auth", tags=["v1 | 👮🏻‍♀️ Authentication"])
+    fastapi_app.include_router(book_router, prefix=f"{version_prefix}/books", tags=["v1 | 📚 Books"])
+    fastapi_app.include_router(reviews_router, prefix=f"{version_prefix}/reviews", tags=["v1 | 👁️‍🗨️ Reviews"])
 
+    logger.info("✅ Application initialized ....!!!!")
+    return fastapi_app
 
+# Call FastAPI App
+app = create_app()

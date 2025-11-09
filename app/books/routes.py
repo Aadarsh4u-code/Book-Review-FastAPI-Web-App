@@ -71,7 +71,5 @@ async def delete_a_book(
         service: BookServiceDep,
         book_id: uuid.UUID,
 ) -> dict:
-    success = await service.delete_book(book_id)
-    if not success:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Book not found')
-    return {"ok": "Book deleted successfully."}
+    result = await service.delete_book(book_id)
+    return {"success": result, "message": "Book deleted successfully"}

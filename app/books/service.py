@@ -5,6 +5,7 @@ import uuid
 
 from app.books.models import BookModel
 from app.books.schemas import BookCreate, BookUpdate
+from app.shared.exception_handlers import BookNotFound
 
 
 class BookService:
@@ -28,7 +29,7 @@ class BookService:
     async def update_book(self, book_id: uuid.UUID, book_data: BookUpdate) -> Optional[BookModel]:
         book = await self.get_book(book_id)
         if not book:
-            return None
+            raise BookNotFound(details={"book_id": str(book_id)})
 
         for field, value in book_data.model_dump(exclude_unset=True).items():
             setattr(book, field, value)
@@ -39,7 +40,7 @@ class BookService:
     async def delete_book(self, book_id: uuid.UUID) -> bool:
         book = await self.get_book(book_id)
         if not book:
-            return False
+            raise BookNotFound(details={"book_id": str(book_id)})
         await self.db.delete(book)
         return True
 
