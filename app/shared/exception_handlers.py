@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from sqlalchemy.exc import SQLAlchemyError
 from app.core.logger import log_exception, log_with_context
 
+
 # -------------------------
 # Standard Error Response
 # -------------------------
@@ -22,7 +23,9 @@ class ErrorResponse(BaseModel):
 # -------------------------
 class BookApiException(Exception):
     """Base class for domain exceptions"""
-    def __init__(self, message: str, error_code: str, details: Optional[Dict[str, Any]] = None, resolution: Optional[str] = None, status_code: int = status.HTTP_400_BAD_REQUEST):
+
+    def __init__(self, message: str, error_code: str, details: Optional[Dict[str, Any]] = None,
+                 resolution: Optional[str] = None, status_code: int = status.HTTP_400_BAD_REQUEST):
         super().__init__(message)
         self.message = message
         self.error_code = error_code
@@ -42,6 +45,7 @@ class InvalidToken(BookApiException):
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
+
 class RevokedToken(BookApiException):
     def __init__(self, details=None):
         super().__init__(
@@ -51,6 +55,7 @@ class RevokedToken(BookApiException):
             resolution="Please get a new token",
             status_code=status.HTTP_401_UNAUTHORIZED
         )
+
 
 class AccessTokenRequired(BookApiException):
     def __init__(self, details=None):
@@ -62,6 +67,7 @@ class AccessTokenRequired(BookApiException):
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
+
 class RefreshTokenRequired(BookApiException):
     def __init__(self, details=None):
         super().__init__(
@@ -72,6 +78,7 @@ class RefreshTokenRequired(BookApiException):
             status_code=status.HTTP_403_FORBIDDEN
         )
 
+
 class UserAlreadyExists(BookApiException):
     def __init__(self, details=None):
         super().__init__(
@@ -80,6 +87,7 @@ class UserAlreadyExists(BookApiException):
             details=details,
             status_code=status.HTTP_403_FORBIDDEN
         )
+
 
 class UserNotFound(BookApiException):
     def __init__(self, details=None):
@@ -90,6 +98,7 @@ class UserNotFound(BookApiException):
             status_code=status.HTTP_404_NOT_FOUND
         )
 
+
 class BookNotFound(BookApiException):
     def __init__(self, details=None):
         super().__init__(
@@ -98,6 +107,7 @@ class BookNotFound(BookApiException):
             details=details,
             status_code=status.HTTP_404_NOT_FOUND
         )
+
 
 class TagNotFound(BookApiException):
     def __init__(self, details=None):
@@ -108,6 +118,7 @@ class TagNotFound(BookApiException):
             status_code=status.HTTP_404_NOT_FOUND
         )
 
+
 class TagAlreadyExists(BookApiException):
     def __init__(self, details=None):
         super().__init__(
@@ -116,6 +127,7 @@ class TagAlreadyExists(BookApiException):
             details=details,
             status_code=status.HTTP_403_FORBIDDEN
         )
+
 
 class AccountNotVerified(BookApiException):
     def __init__(self, details=None):
@@ -127,6 +139,7 @@ class AccountNotVerified(BookApiException):
             status_code=status.HTTP_403_FORBIDDEN
         )
 
+
 class InvalidCredentials(BookApiException):
     def __init__(self, details=None):
         super().__init__(
@@ -135,6 +148,7 @@ class InvalidCredentials(BookApiException):
             details=details,
             status_code=status.HTTP_400_BAD_REQUEST
         )
+
 
 class InsufficientPermission(BookApiException):
     def __init__(self, details=None):
@@ -152,7 +166,7 @@ class InsufficientPermission(BookApiException):
 def register_exception_handlers(app: FastAPI):
     """Register all exception handlers"""
 
-    # 1️⃣ Domain Exceptions (BooklyException subclasses)
+    # 1️⃣ Domain Exceptions (BookApiException subclasses)
     domain_exceptions: list[Type[BookApiException]] = [
         BookNotFound, UserNotFound, UserAlreadyExists, InvalidCredentials,
         InvalidToken, RevokedToken, AccessTokenRequired, RefreshTokenRequired,
@@ -161,11 +175,12 @@ def register_exception_handlers(app: FastAPI):
 
     for exc_class in domain_exceptions:
         # Use default argument trick to avoid late binding in loops
-        def _make_handler(exc_type: Type[BookApiException]) -> Callable[[Request, Exception], Coroutine[Any, Any, JSONResponse]]:
+        def _make_handler(exc_type: Type[BookApiException]) -> Callable[
+            [Request, Exception], Coroutine[Any, Any, JSONResponse]]:
             async def handler(request: Request, exc: BookApiException) -> JSONResponse:
                 log_with_context(
                     "warning",
-                    f"Handled BooklyException: {exc.error_code}",
+                    f"Handled BookApiException: {exc.error_code}",
                     details=exc.details,
                     path=str(request.url),
                     method=request.method
@@ -180,14 +195,16 @@ def register_exception_handlers(app: FastAPI):
                         resolution=exc.resolution
                     ).model_dump()
                 )
-            return handler # Type: ignore
+
+            return handler  # Type: ignore
 
         app.add_exception_handler(exc_class, _make_handler(exc_class))
 
     # 2️⃣ Database errors
     @app.exception_handler(SQLAlchemyError)
     async def sqlalchemy_exception_handler(request: Request, exc: SQLAlchemyError):
-        log_exception(exc, context="SQLAlchemyError", path=str(request.url), method=request.method, query=getattr(exc, "statement", None))
+        log_exception(exc, context="SQLAlchemyError", path=str(request.url), method=request.method,
+                      query=getattr(exc, "statement", None))
         log_with_context("error", "Database error", path=str(request.url), method=request.method)
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -217,7 +234,8 @@ def register_exception_handlers(app: FastAPI):
     @app.exception_handler(HTTPException)
     async def http_exception_handler(request: Request, exc: HTTPException):
         details = {"detail": exc.detail} if exc.detail else None
-        log_with_context("info", "HTTPException raised", path=str(request.url), method=request.method, status_code=exc.status_code, **(details or {}))
+        log_with_context("info", "HTTPException raised", path=str(request.url), method=request.method,
+                         status_code=exc.status_code, **(details or {}))
         return JSONResponse(
             status_code=exc.status_code or status.HTTP_500_INTERNAL_SERVER_ERROR,
             content=ErrorResponse(

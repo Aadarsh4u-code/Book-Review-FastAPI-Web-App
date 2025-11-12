@@ -5,6 +5,7 @@ from app.auth.routes import auth_router
 from app.books.routes import book_router
 from app.core.config import settings
 from app.core.logger import logger
+from app.core.middleware import register_middleware
 from app.db.redis import redis_client
 from app.db.session import init_db
 from app.reviews.routes import reviews_router
@@ -64,8 +65,12 @@ def create_app() -> FastAPI:
         redoc_url=f"{version_prefix}/redoc"
     )
 
+    # Register custom Middleware
+    register_middleware(fastapi_app)
+
     # Register custom exception handlers
     register_exception_handlers(fastapi_app)
+
 
     # Include routers
     fastapi_app.include_router(auth_router, prefix=f"{version_prefix}/auth", tags=["v1 | 👮🏻‍♀️ Authentication"])

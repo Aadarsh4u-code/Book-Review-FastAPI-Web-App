@@ -67,7 +67,28 @@ class ContextFormatter(logging.Formatter):
             color = self.COLORS.get(record.levelname.strip('\033[0m'), self.COLORS['RESET'])
             record.levelname = f"{color}{record.levelname}{self.COLORS['RESET']}"
 
-        return super().format(record)
+        # return super().format(record)
+
+        # Call base formatter first
+        base_log = super().format(record)
+
+        # Append structured context if available
+        if hasattr(record, "extra_data") and isinstance(record.extra_data, dict):
+            extras = record.extra_data
+            # duration = extras.get("duration_ms")
+            client = extras.get("client") or extras.get("client_host")
+
+            extra_info = []
+            # if duration is not None:
+            #     extra_info.append(f"duration={duration}ms")
+            if client is not None:
+                extra_info.append(f"client={client}")
+
+            if extra_info:
+                base_log = f"{base_log} | {' | '.join(extra_info)}"
+
+        return base_log
+
 
 
 def setup_logger(
@@ -192,15 +213,19 @@ def log_with_context(level: str, message: str, **context: Any) -> None:
 
 def log_http_request(method: str, url: str, status_code: int = None, duration: float = None, **extra: Any) -> None:
     """Log HTTP request with context"""
+    duration_ms = round(duration * 1000, 2) if duration else None
     context = {
         "type": "http_request",
         "method": method,
         "url": str(url),
         "status_code": status_code,
-        "duration_ms": round(duration * 1000, 2) if duration else None,
+        "duration_ms": duration_ms,
         **extra
     }
-    log_with_context("info", f"{method} {url} - {status_code}", **context)
+    message = f"{method} {url} - {status_code}"
+    if duration_ms is not None:
+        message += f" (duration={duration_ms} ms)"
+    log_with_context("info", message, **context)
 
 
 def log_database_query(operation: str, table: str, duration: float = None, **extra: Any) -> None:

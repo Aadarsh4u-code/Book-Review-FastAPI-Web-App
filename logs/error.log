@@ -398,3 +398,47 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/books/service.py", line 43, in delete_book
     raise BookNotFound(details={"book_id": str(book_id)})
 app.shared.exception_handlers.BookNotFound: Book not found
+2025-11-12 17:47:10 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:226 | Exception in BookNotFound: Book not found
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/books/routes.py", line 74, in delete_a_book
+    result = await service.delete_book(book_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/books/service.py", line 43, in delete_book
+    raise BookNotFound(details={"book_id": str(book_id)})
+app.shared.exception_handlers.BookNotFound: Book not found
+2025-11-12 17:49:13 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:226 | Exception in BookNotFound: Book not found
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/books/routes.py", line 74, in delete_a_book
+    result = await service.delete_book(book_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/books/service.py", line 43, in delete_book
+    raise BookNotFound(details={"book_id": str(book_id)})
+app.shared.exception_handlers.BookNotFound: Book not found
