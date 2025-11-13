@@ -2,6 +2,7 @@ import os
 from typing import Optional
 
 from asyncpg.pgproto.pgproto import timedelta
+from pydantic import EmailStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from app.shared.utils import EnvironmentSchema
 
@@ -21,7 +22,20 @@ class Settings(BaseSettings):
     JWT_AUDIENCE: Optional[str] = None
     JTI_EXPIRY: int = 60 * 60  # 1 hour
 
+    MAIL_USERNAME: str = ""
+    MAIL_PASSWORD: str = ""
+    MAIL_FROM: EmailStr = ""
+    MAIL_PORT: int = 587
+    MAIL_SERVER:str = ""
+    MAIL_FROM_NAME: str = ""
+    MAIL_STARTTLS: bool = True
+    MAIL_SSL_TLS: bool = False
+    USE_CREDENTIALS: bool = True
+    VALIDATE_CERTS: bool = True
+
     EMAIL_TOKEN_EXPIRY: int = 60 * 60 # 1 Hour
+
+    DOMAIN: str = ""
 
 
     model_config = SettingsConfigDict(

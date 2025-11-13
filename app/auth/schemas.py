@@ -67,5 +67,7 @@ class TokenPayload(BaseModel):
     user: UserBasicDetails
 
 
+class EmailSchema(BaseModel):
+    email_address: List[EmailStr]
 
 

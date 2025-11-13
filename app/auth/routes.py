@@ -1,14 +1,30 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 
 from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep, get_current_user, get_role_checker_dep
-from app.auth.schemas import MeResponse, TokenResponse, TokenPayload
+from app.auth.schemas import MeResponse, TokenResponse, TokenPayload, EmailSchema
 from app.shared.utils import UserRole
 from app.user.dependencies import UserServiceDep
 from app.user.models import UserModel
 from app.user.schemas import UserCreate, UserLogin
+from app.worker.email_tasks import fastmail, create_email_message
 
 auth_router = APIRouter()
 role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin, UserRole.superadmin])
+
+
+# Send Email for Account Verification
+@auth_router.post("/send_email", status_code=status.HTTP_200_OK)
+async def send_email(emails: EmailSchema):
+    emails = emails.email_address
+    html = """<h1>Hi this test mail, thanks for using Fastapi-mail</h1> """
+    message = create_email_message(
+        recipient=emails,
+        subject="Welcome Test Mail",
+        body=html.strip(),
+    )
+    await fastmail.send_message(message)
+    return {"message": "Email sent successfully."}
+
 
 
 # Register User
