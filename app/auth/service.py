@@ -13,8 +13,9 @@ from app.shared.exception_handlers import InvalidToken, UserNotFound
 from app.shared.utils import now_utc_dt, create_url_safe_token, decode_url_safe_token
 from app.user.models import UserModel
 from app.user.service import UserService
-from app.worker.email_tasks import create_email_message, fastmail, render_verification_email_template, \
-    render_verified_user_template, render_password_reset_email_template, render_password_reset_success_template
+from app.worker.celery_app_tasks import send_email_task
+from app.worker.email_tasks import (render_verification_email_template,
+    render_verified_user_template, render_password_reset_email_template, render_password_reset_success_template)
 
 
 class AuthService:
@@ -132,13 +133,20 @@ class AuthService:
         # Render HTML email body
         html_body = render_verification_email_template(user.username, verify_url)
 
-        # Build and send message
-        message = create_email_message(
-            recipient=[user.email],
+        # Build and send message as Background Task with Celery
+        send_email_task.delay(
+            recipient_email= [user.email],
             subject="Verify your email address",
-            body=html_body,
+            html_body=html_body
         )
-        await fastmail.send_message(message)
+
+        # Simple way to send mail without any Background worker
+        # message = create_email_message(
+        #     recipient=[user.email],
+        #     subject="Verify your email address",
+        #     body=html_body,
+        # )
+        # await fastmail.send_message(message)
 
 
     # Verify email when user clicks link
@@ -182,13 +190,12 @@ class AuthService:
         # Render HTML email body
         html_body = render_password_reset_email_template(reset_link)
 
-        # Build and send message
-        message = create_email_message(
-            recipient=[user_email],
+        # Build and send message as Background Task with Celery
+        send_email_task.delay(
+            recipient_email=[user_email],
             subject="Reset your password",
-            body=html_body,
+            html_body=html_body
         )
-        await fastmail.send_message(message)
         return {"message": "Password reset email sent successfully"}
 
 

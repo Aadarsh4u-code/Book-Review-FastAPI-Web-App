@@ -9,7 +9,7 @@ from app.shared.utils import UserRole
 from app.user.dependencies import UserServiceDep
 from app.user.models import UserModel
 from app.user.schemas import UserCreate, UserLogin
-from app.worker.email_tasks import fastmail, create_email_message
+from app.worker.celery_app_tasks import send_email_task
 
 auth_router = APIRouter()
 role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin, UserRole.superadmin])
@@ -19,13 +19,13 @@ role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin, UserRole
 @auth_router.post("/send-email", status_code=status.HTTP_200_OK)
 async def send_email(user_emails: EmailSchema):
     emails = user_emails.email_address
-    html = """<h1>Hi this test mail, thanks for using Fastapi-mail</h1> """
-    message = create_email_message(
-        recipient=emails,
+    html_body = """<h1>Hi this test mail, thanks for using Fastapi-mail</h1> """
+    # Build and send message as Background Task with Celery
+    send_email_task.delay(
+        recipient_email=[emails],
         subject="Welcome Test Mail",
-        body=html.strip(),
+        html_body=html_body
     )
-    await fastmail.send_message(message)
     return {"message": "Email sent successfully."}
 
 

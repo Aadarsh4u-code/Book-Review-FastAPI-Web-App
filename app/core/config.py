@@ -64,3 +64,8 @@ class Settings(BaseSettings):
 # create a single instance for global use
 settings = Settings()
 
+# Setup for Background Task | Redis or RabbitMQ
+broker_url = settings.REDIS_URL
+result_backend = settings.REDIS_URL
+# broker_connection_retry_on_startup = True
+
