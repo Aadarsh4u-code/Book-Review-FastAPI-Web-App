@@ -38,12 +38,13 @@ def create_email_message(recipient: Sequence[Union[str, EmailStr]], subject: str
 
 
 ###################--------------------> Generate Emails Templates<-----------#######################
-def render_verification_email_template(user_name: str, verification_link: str) -> str:
-    # Get absolute path to this file’s directory
-    base_dir = os.path.dirname(os.path.abspath(__file__))
 
+# Get absolute path to this file’s directory
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+def render_verification_email_template(user_name: str, verification_link: str) -> str:
     # Go up one level (from shared → app) and into templates
-    template_path = os.path.join(base_dir, "..", "templates", "verify_email.html")
+    template_path = os.path.join(base_dir, "..", "templates", "email_verify.html")
 
     # Normalize path
     template_path = os.path.normpath(template_path)
@@ -52,31 +53,67 @@ def render_verification_email_template(user_name: str, verification_link: str) -
     with open(template_path, "r", encoding="utf-8") as f:
         html_content = f.read()
 
-        # Optionally replace placeholders
-        html_content = html_content.replace("{{user_name}}", user_name)
-        html_content = html_content.replace("{{verification_link}}", verification_link)
-        html_content = html_content.replace("{{year}}", str(datetime.now().year))
+    # Optionally replace placeholders
+    html_content = html_content.replace("{{user_name}}", user_name)
+    html_content = html_content.replace("{{verification_link}}", verification_link)
+    html_content = html_content.replace("{{year}}", str(datetime.now().year))
 
-        return html_content
+    return html_content
 
 
 
 def render_verified_user_template(homepage_link: str) -> str:
-    # Get absolute path to this file’s directory
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-
     # Go up one level (from shared → app) and into templates
-    template_path = os.path.join(base_dir, "..", "templates", "account_verified.html")
+    template_path = os.path.join(base_dir, "..", "templates", "account_verify.html")
 
     # Normalize path
     template_path = os.path.normpath(template_path)
 
     # Read file
     with open(template_path, "r", encoding="utf-8") as f:
-        html_content = f.read()
+        html_content = f.read() # Read into memory
+        # file is now safely closed here
 
-        # Optionally replace placeholders
-        html_content = html_content.replace("{{homepage_link}}", homepage_link)
-        html_content = html_content.replace("{{year}}", str(datetime.now().year))
+    # Do your text manipulations after the file is closed
+    html_content = html_content.replace("{{homepage_link}}", homepage_link)
+    html_content = html_content.replace("{{year}}", str(datetime.now().year))
 
-        return html_content
+    return html_content
+
+
+def render_password_reset_email_template(reset_link: str) -> str:
+    # Go up one level (from shared → app) and into templates
+    template_path = os.path.join(base_dir, "..", "templates", "password_reset.html")
+
+    # Normalize path
+    template_path = os.path.normpath(template_path)
+
+    # Read file
+    with open(template_path, "r", encoding="utf-8") as f:
+        html_content = f.read()  # Read into memory
+        # file is now safely closed here
+
+    # Do your text manipulations after the file is closed
+    html_content = html_content.replace("{{reset_link}}", reset_link)
+    html_content = html_content.replace("{{year}}", str(datetime.now().year))
+
+    return html_content
+
+
+def render_password_reset_success_template(login_url: str) -> str:
+    # Go up one level (from shared → app) and into templates
+    template_path = os.path.join(base_dir, "..", "templates", "password_reset_success.html")
+
+    # Normalize path
+    template_path = os.path.normpath(template_path)
+
+    # Read file
+    with open(template_path, "r", encoding="utf-8") as f:
+        html_content = f.read()  # Read into memory
+        # file is now safely closed here
+
+    # Do your text manipulations after the file is closed
+    html_content = html_content.replace("{{login_url}}", login_url)
+    html_content = html_content.replace("{{year}}", str(datetime.now().year))
+
+    return html_content

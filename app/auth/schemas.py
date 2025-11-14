@@ -74,3 +74,10 @@ class EmailSchema(BaseModel):
 class SignupResponse(BaseModel):
     message: str
     user: MeResponse
+
+class PasswordResetRequest(BaseModel):
+    email: EmailStr
+
+class PasswordResetConfirm(BaseModel):
+    new_password: str
+    confirm_new_password: str

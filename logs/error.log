@@ -888,3 +888,565 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 37, in signup
     raise UserAlreadyExists(details={"email": form_data.email})
 app.shared.exception_handlers.UserAlreadyExists: User with email already exists
+2025-11-14 16:00:39 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
+    raise AccountNotVerified(details={"user_email": current_user.email})
+app.shared.exception_handlers.AccountNotVerified: Account not verified
+2025-11-14 17:44:00 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UserNotFound: User not found
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 92, in password_reset_request
+    return await auth_service.password_reset(user_email.email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/service.py", line 192, in password_reset
+    raise UserNotFound(details={"user_email": user_email})
+app.shared.exception_handlers.UserNotFound: User not found
+2025-11-14 17:44:50 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UserNotFound: User not found
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 92, in password_reset_request
+    return await auth_service.password_reset(user_email.email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/service.py", line 192, in password_reset
+    raise UserNotFound(details={"user_email": user_email})
+app.shared.exception_handlers.UserNotFound: User not found
+2025-11-14 18:03:51 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
+2025-11-14 18:08:15 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
+    status_code=status.HTTP_400_UNAUTHORIZED
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
+    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
+AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
+2025-11-14 18:08:15 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
+    status_code=status.HTTP_400_UNAUTHORIZED
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
+    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
+AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
+2025-11-14 18:11:22 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
+    status_code=status.HTTP_400_UNAUTHORIZED
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
+    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
+AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
+2025-11-14 18:11:22 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
+    status_code=status.HTTP_400_UNAUTHORIZED
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
+    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
+AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
+2025-11-14 18:13:57 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"new_password": passwords.new_password})
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
+    status_code=status.HTTP_400_UNAUTHORIZED
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
+    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
+AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
+2025-11-14 18:13:57 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"new_password": passwords.new_password})
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
+    status_code=status.HTTP_400_UNAUTHORIZED
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
+    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
+AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
+2025-11-14 18:16:32 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: Password do not match
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"new_password": passwords.new_password})
+app.shared.exception_handlers.PasswordNotMatch: Password do not match
+2025-11-14 18:16:32 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: Password do not match
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
+    raise PasswordNotMatch(details={"new_password": passwords.new_password})
+app.shared.exception_handlers.PasswordNotMatch: Password do not match
+2025-11-14 18:21:15 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 6 characters', 'input': '12345', 'ctx': {'min_length': 6}}]
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 6 characters', 'input': '12345', 'ctx': {'min_length': 6}}]

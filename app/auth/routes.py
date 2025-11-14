@@ -1,9 +1,10 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 
 from app.auth.dependencies import RefreshTokenDep, AccessTokenDep, AuthServiceDep, get_current_user, get_role_checker_dep
-from app.auth.schemas import MeResponse, TokenResponse, TokenPayload, EmailSchema, SignupResponse
+from app.auth.schemas import MeResponse, TokenResponse, TokenPayload, EmailSchema, SignupResponse, PasswordResetRequest, \
+    PasswordResetConfirm
 from app.core.logger import logger
-from app.shared.exception_handlers import UserAlreadyExists
+from app.shared.exception_handlers import UserAlreadyExists, PasswordNotMatch
 from app.shared.utils import UserRole
 from app.user.dependencies import UserServiceDep
 from app.user.models import UserModel
@@ -15,7 +16,7 @@ role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin, UserRole
 
 
 # Send Email for Account Verification
-@auth_router.post("/send_email", status_code=status.HTTP_200_OK)
+@auth_router.post("/send-email", status_code=status.HTTP_200_OK)
 async def send_email(user_emails: EmailSchema):
     emails = user_emails.email_address
     html = """<h1>Hi this test mail, thanks for using Fastapi-mail</h1> """
@@ -54,7 +55,7 @@ async def signup(form_data: UserCreate, user_service: UserServiceDep, auth_servi
     )
 
 
-@auth_router.get("/verify_email/{token}", status_code=status.HTTP_200_OK)
+@auth_router.get("/verify-email/{token}", status_code=status.HTTP_200_OK)
 async def verify_email(token: str, auth_service: AuthServiceDep):
     return await auth_service.verify_email_token(token)
 
@@ -84,3 +85,15 @@ async def revoke_all(auth_service: AuthServiceDep, token: TokenPayload = AccessT
 @auth_router.get("/me", response_model=MeResponse, dependencies=[role_checker_dep])
 async def get_me(user: UserModel = Depends(get_current_user)):
     return MeResponse.from_user(user)
+
+
+@auth_router.post("password-reset-request", status_code=status.HTTP_200_OK)
+async def password_reset_request(user_email: PasswordResetRequest, auth_service: AuthServiceDep):
+    return await auth_service.password_reset(user_email.email)
+
+
+@auth_router.post("/password-reset-confirm/{token}", status_code=status.HTTP_200_OK)
+async def password_reset_request_confirm(token: str, passwords: PasswordResetConfirm, auth_service: AuthServiceDep):
+    if passwords.new_password != passwords.confirm_new_password:
+        raise PasswordNotMatch(details={"new_password": passwords.new_password})
+    return await auth_service.password_reset_confirm(token, passwords)

@@ -14,7 +14,7 @@ from app.shared.utils import now_utc_dt, create_url_safe_token, decode_url_safe_
 from app.user.models import UserModel
 from app.user.service import UserService
 from app.worker.email_tasks import create_email_message, fastmail, render_verification_email_template, \
-    render_verified_user_template
+    render_verified_user_template, render_password_reset_email_template, render_password_reset_success_template
 
 
 class AuthService:
@@ -127,7 +127,7 @@ class AuthService:
         url_token = create_url_safe_token({"email": user.email})
 
         # Construct verification link
-        verify_url = f"http://{settings.DOMAIN_URL}/api/v1/auth/verify_email/{url_token}"
+        verify_url = f"http://{settings.DOMAIN_URL}/api/v1/auth/verify-email/{url_token}"
 
         # Render HTML email body
         html_body = render_verification_email_template(user.username, verify_url)
@@ -166,6 +166,60 @@ class AuthService:
         return JSONResponse(content={
             "message": "Error occurred during verification",
         }, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+    async def password_reset(self, user_email: EmailStr):
+        if not await self.user_service.check_user_exists(user_email):
+            raise UserNotFound(details={"user_email": user_email})
+
+        # Generate a short-lived verification token
+        url_token = create_url_safe_token({"email": user_email})
+
+        # Construct verification link
+        reset_link = f"http://{settings.DOMAIN_URL}/api/v1/auth/password-reset-confirm/{url_token}"
+
+        # Render HTML email body
+        html_body = render_password_reset_email_template(reset_link)
+
+        # Build and send message
+        message = create_email_message(
+            recipient=[user_email],
+            subject="Reset your password",
+            body=html_body,
+        )
+        await fastmail.send_message(message)
+        return {"message": "Password reset email sent successfully"}
+
+
+    async def password_reset_confirm(self, token, passwords):
+        login_url = f"http://{settings.DOMAIN_URL}/api/v1/login"
+
+        payload = decode_url_safe_token(token)
+        if not payload:
+            raise InvalidToken(details=payload)
+
+        user_email = payload.get("email")
+        if user_email:
+            user = await self.user_service.get_user_by_email(user_email)
+            if not user:
+                raise UserNotFound(details={"user_email": user_email})
+
+            html_body = render_password_reset_success_template(login_url)
+
+            # Reset user password
+            await self.user_service.reset_user_password(user, passwords)
+            return JSONResponse(
+                content={"message": "Password reset Successfully"},
+                status_code=status.HTTP_200_OK,
+            )
+            # return HTMLResponse(content=html_body)
+        else:
+            return JSONResponse(content={
+                "message": "Error occurred during password reset",
+            }, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 
 
 

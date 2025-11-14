@@ -160,6 +160,16 @@ class InsufficientPermission(BookApiException):
         )
 
 
+class PasswordNotMatch(BookApiException):
+    def __init__(self, details=None):
+        super().__init__(
+            message="Password do not match",
+            error_code="password_do_not_match",
+            details=details,
+            status_code=status.HTTP_400_BAD_REQUEST
+        )
+
+
 # -------------------------
 # Exception Handlers
 # -------------------------
