@@ -71,3 +71,6 @@ class EmailSchema(BaseModel):
     email_address: List[EmailStr]
 
 
+class SignupResponse(BaseModel):
+    message: str
+    user: MeResponse

@@ -51,7 +51,7 @@ class UserUpdate(BaseModel):
     role: UserRole
 
 
-class UserDelete(BaseModel):
+class UserID(BaseModel):
     uid: uuid.UUID
 
 

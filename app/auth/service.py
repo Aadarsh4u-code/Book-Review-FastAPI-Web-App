@@ -1,13 +1,20 @@
 from datetime import datetime, timezone
 from typing import Dict, Any
 from fastapi import HTTPException, status
+from fastapi.responses import HTMLResponse
 from pydantic import EmailStr
 from sqlalchemy.ext.asyncio import AsyncSession
+from starlette.responses import JSONResponse
 
+from app.core.config import settings
 from app.core.security import create_jwt_token, decode_jwt_token
 from app.db.redis import redis_client
-from app.shared.utils import now_utc_dt
+from app.shared.exception_handlers import InvalidToken, UserNotFound
+from app.shared.utils import now_utc_dt, create_url_safe_token, decode_url_safe_token
+from app.user.models import UserModel
 from app.user.service import UserService
+from app.worker.email_tasks import create_email_message, fastmail, render_verification_email_template, \
+    render_verified_user_template
 
 
 class AuthService:
@@ -111,3 +118,59 @@ class AuthService:
         user_id = access_payload["user"]["uid"]
         await redis_client.revoke_user_refresh_tokens(user_id)
         return {"message": "All refresh tokens revoked"}
+
+
+    #  Send verification email after registration
+    @staticmethod
+    async def send_verification_email(user: UserModel):
+        # Generate a short-lived verification token
+        url_token = create_url_safe_token({"email": user.email})
+
+        # Construct verification link
+        verify_url = f"http://{settings.DOMAIN_URL}/api/v1/auth/verify_email/{url_token}"
+
+        # Render HTML email body
+        html_body = render_verification_email_template(user.username, verify_url)
+
+        # Build and send message
+        message = create_email_message(
+            recipient=[user.email],
+            subject="Verify your email address",
+            body=html_body,
+        )
+        await fastmail.send_message(message)
+
+
+    # Verify email when user clicks link
+    async def verify_email_token(self, token: str):
+        homepage_link = f"http://{settings.DOMAIN_URL}/api/v1/docs"
+
+        payload = decode_url_safe_token(token)
+        if not payload:
+            raise InvalidToken(details=payload)
+
+        user_email = payload.get("email")
+        if user_email:
+            user = await self.user_service.get_user_by_email(user_email)
+            if not user:
+                raise UserNotFound(details={"user_email": user_email})
+
+            html_body = render_verified_user_template(homepage_link)
+            if user.is_verified:
+                return HTMLResponse(content=html_body)
+
+            # Update user to verified
+            await self.user_service.mark_user_verified(user.uid)
+            return HTMLResponse(content=html_body)
+
+        return JSONResponse(content={
+            "message": "Error occurred during verification",
+        }, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+
+
+
+
+

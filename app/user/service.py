@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import get_hash_password, verify_password
 from app.user.models import UserModel
-from app.user.schemas import UserCreate, UserUpdate, UserDelete
+from app.user.schemas import UserCreate, UserUpdate, UserID
 
 
 class UserService:
@@ -66,7 +66,8 @@ class UserService:
         await self.db.refresh(user)
         return user
 
-    async def delete_user(self, user_id: UserDelete) -> bool | None:
+
+    async def delete_user(self, user_id: UserID) -> bool | None:
         result = await self.db.execute(select(UserModel).where(UserModel.uid == user_id))
         user = result.scalar_one_or_none()
         if not user:
@@ -74,6 +75,13 @@ class UserService:
         await self.db.delete(user)
         await self.db.commit()
         return True
+
+
+    async def mark_user_verified(self, user_id: uuid.UUID) -> bool | None:
+        user = await self.get_user_by_id(user_id)
+        user.is_verified = True
+        user.is_active = True
+        await self.db.commit()
 
 
 

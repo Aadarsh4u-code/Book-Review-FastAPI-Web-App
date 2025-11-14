@@ -8,6 +8,7 @@ from app.auth.service import AuthService
 from app.core.security import decode_jwt_token
 from app.db.redis import redis_client
 from app.db.session import get_db_session
+from app.shared.exception_handlers import AccountNotVerified, InsufficientPermission
 from app.shared.utils import UserRole
 from app.user.dependencies import get_user_service, UserServiceDep
 from app.user.models import UserModel
@@ -39,8 +40,6 @@ class TokenBearer(HTTPBearer):
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Empty token provided"
             )
-
-
 
         # Decode token
         payload = decode_jwt_token(token)
@@ -91,12 +90,11 @@ class AccessTokenBearer(TokenBearer):
 
 class RefreshTokenBearer(TokenBearer):
     async def verify_token_data(self, payload: dict):
-        if not payload.get("refresh", False): # Reject if it's NOT a refresh token
+        if not payload.get("refresh", False):  # Reject if it's NOT a refresh token
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Refresh token required"
             )
-
 
 
 #################--------Dependencies-----------########################
@@ -110,14 +108,14 @@ async def get_auth_service(
         user_service: UserService = Depends(get_user_service)):
     return AuthService(db_session, user_service)
 
-AuthServiceDep: TypeAlias = Annotated[AuthService, Depends(get_auth_service)]
 
+AuthServiceDep: TypeAlias = Annotated[AuthService, Depends(get_auth_service)]
 
 
 # Get Current User and Its Detail
 async def get_current_user(user_service: UserServiceDep,
-        token_payload: dict = AccessTokenDep
-        ) -> Optional[UserModel]:
+                           token_payload: dict = AccessTokenDep
+                           ) -> Optional[UserModel]:
     user_data = token_payload.get("user")
     if not user_data or "email" not in user_data:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token payload")
@@ -133,12 +131,15 @@ class RoleChecker:
         self.allowed_roles = allowed_roles
 
     def __call__(self, current_user: UserModel = Depends(get_current_user)) -> bool:
-        if current_user.role not in self.allowed_roles:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail=f"User role '{current_user.role.value}' not allowed. Requires one of: {self.allowed_roles}",
-            )
-        return True
+        if not current_user.is_verified:
+            raise AccountNotVerified(details={"user_email": current_user.email})
+        if current_user.role in self.allowed_roles:
+            return True
+        raise InsufficientPermission(
+            details={
+                "user_email": f"User role '{current_user.role.value}' not allowed. Requires one of: {self.allowed_roles}"}
+        )
+
 
 def get_role_checker_dep(allowed_roles: list[UserRole]):
     return Depends(RoleChecker(allowed_roles))

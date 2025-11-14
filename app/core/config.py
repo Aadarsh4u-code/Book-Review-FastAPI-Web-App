@@ -1,15 +1,21 @@
 import os
-from typing import Optional
+from enum import Enum
+from typing import Optional, TYPE_CHECKING
 
 from asyncpg.pgproto.pgproto import timedelta
 from pydantic import EmailStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from app.shared.utils import EnvironmentSchema
+
+
+class EnvironmentSchema(str, Enum):
+    DEV = "dev"
+    PROD = "prod"
+    STAGING = "staging"
 
 
 class Settings(BaseSettings):
     APP_NAME: str = "Book Review API"
-    ENVIRONMENT: str = EnvironmentSchema.DEV  # Add this
+    ENVIRONMENT: str = EnvironmentSchema.DEV
 
     DATABASE_URL: str = ""
     REDIS_URL: str = ""
@@ -32,10 +38,11 @@ class Settings(BaseSettings):
     MAIL_SSL_TLS: bool = False
     USE_CREDENTIALS: bool = True
     VALIDATE_CERTS: bool = True
+    EMAIL_SALT:str = "email-configuration"
 
     EMAIL_TOKEN_EXPIRY: int = 60 * 60 # 1 Hour
 
-    DOMAIN: str = ""
+    DOMAIN_URL: str = ""
 
 
     model_config = SettingsConfigDict(

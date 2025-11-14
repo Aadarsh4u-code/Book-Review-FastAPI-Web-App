@@ -3,14 +3,13 @@ from fastapi import FastAPI
 
 from app.auth.routes import auth_router
 from app.books.routes import book_router
-from app.core.config import settings
+from app.core.config import settings, EnvironmentSchema
 from app.core.logger import logger
 from app.core.middleware import register_middleware
 from app.db.redis import redis_client
 from app.db.session import init_db
 from app.reviews.routes import reviews_router
 from app.shared.exception_handlers import register_exception_handlers
-from app.shared.utils import EnvironmentSchema
 
 version = "v1"
 description = """

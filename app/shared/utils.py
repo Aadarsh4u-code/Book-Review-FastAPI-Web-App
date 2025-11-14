@@ -1,8 +1,14 @@
+import os
 import uuid
 from datetime import datetime, timezone
 from enum import Enum
+from typing import TYPE_CHECKING
 
-from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from itsdangerous import URLSafeTimedSerializer
+from app.core.logger import logger
+
+from app.core.config import settings
+
 
 
 ###################--------------------> Utility Schemas <-----------#######################
@@ -13,37 +19,12 @@ class UserRole(str, Enum):
     admin = "admin"
     superadmin = "superadmin"
 
-class EnvironmentSchema(str, Enum):
-    DEV = "dev"
-    PROD = "prod"
-    STAGING = "staging"
+
 
 
 
 
 ###################--------------------> Pydantic Schemas <-----------#######################
-
-class UIDSchema(BaseModel):
-    uid: uuid.UUID = Field(..., description="Unique identifier")
-
-    model_config = ConfigDict(
-        # for nicer OpenAPI docs and JSON serialization
-        json_schema_extra={
-            "example": {"uid": "c5b89b48-372a-4b57-9b7f-1d935dfec45f"}
-        }
-    )
-
-class EmailSchema(BaseModel):
-    email: EmailStr = Field(..., description="Valid email address")
-
-    model_config = ConfigDict(
-        # for nicer OpenAPI docs and JSON serialization
-        json_schema_extra={
-            "example": {"email": "aadarsh@example.com"}
-        }
-    )
-
-
 
 
 
@@ -63,3 +44,28 @@ def now_utc_dt() -> datetime:
         Example: datetime(2025, 11, 5, 17, 25, 30, tzinfo=timezone.utc)
     """
     return datetime.now(timezone.utc)
+
+
+###################--------------------> Itsdangerous Setup for Email Link<-----------#######################
+
+email_token_serializer = URLSafeTimedSerializer(
+        secret_key= settings.JWT_SECRET_KEY,
+        salt= settings.EMAIL_SALT,
+    )
+
+
+def create_url_safe_token(data: dict) -> str:
+    email_token = email_token_serializer.dumps(data)
+    return email_token
+
+
+def decode_url_safe_token(token: str):
+    try:
+        email_token = email_token_serializer.loads(token)
+        return email_token
+    except Exception as exc:
+        logger.error(f"Failed to decode email url safe token: {exc}")
+
+
+
+
