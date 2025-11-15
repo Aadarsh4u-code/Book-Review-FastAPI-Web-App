@@ -232,7 +232,7 @@ def register_exception_handlers(app: FastAPI):
         errors = exc.errors()
         log_exception(exc, context="RequestValidationError", path=str(request.url), method=request.method)
         return JSONResponse(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
             content=ErrorResponse(
                 message="Validation error",
                 error_code="validation_error",

@@ -1787,3 +1787,182 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/services.py", line 85, in add_tag_to_book
     raise TagNotFound(details={"tag_name": tag_item.name})
 app.shared.exception_handlers.TagNotFound: Tag not found
+2025-11-15 17:42:15 | ERROR    | src:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': {'email': 'new@example.com', 'password': 'secret123', 'full_name': 'Test User'}}, {'type': 'missing', 'loc': ('body', 'first_name'), 'msg': 'Field required', 'input': {'email': 'new@example.com', 'password': 'secret123', 'full_name': 'Test User'}}, {'type': 'missing', 'loc': ('body', 'last_name'), 'msg': 'Field required', 'input': {'email': 'new@example.com', 'password': 'secret123', 'full_name': 'Test User'}}]
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: [{'type': 'missing', 'loc': ('body', 'username'), 'msg': 'Field required', 'input': {'email': 'new@example.com', 'password': 'secret123', 'full_name': 'Test User'}}, {'type': 'missing', 'loc': ('body', 'first_name'), 'msg': 'Field required', 'input': {'email': 'new@example.com', 'password': 'secret123', 'full_name': 'Test User'}}, {'type': 'missing', 'loc': ('body', 'last_name'), 'msg': 'Field required', 'input': {'email': 'new@example.com', 'password': 'secret123', 'full_name': 'Test User'}}]
+2025-11-15 17:47:08 | ERROR    | src:core/logger.py|log_exception:251 | Exception in HTTP Middleware: 4 validation errors for MeResponse
+username
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...ername' id='4548812752'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+first_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548813424'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548814096'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+role
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre....value' id='4548818128'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/src/core/middleware.py", line 22, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/src/auth/routes.py", line 54, in signup
+    user=MeResponse.from_user(new_user)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/src/auth/schemas.py", line 41, in from_user
+    return cls(
+        uid=str(user.uid),
+    ...<9 lines>...
+        books=user.books,
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 4 validation errors for MeResponse
+username
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...ername' id='4548812752'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+first_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548813424'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548814096'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+role
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre....value' id='4548818128'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+2025-11-15 17:47:08 | ERROR    | src:core/logger.py|log_exception:251 | Exception in UnhandledException: 4 validation errors for MeResponse
+username
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...ername' id='4548812752'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+first_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548813424'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548814096'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+role
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre....value' id='4548818128'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/src/core/middleware.py", line 22, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/src/auth/routes.py", line 54, in signup
+    user=MeResponse.from_user(new_user)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/src/auth/schemas.py", line 41, in from_user
+    return cls(
+        uid=str(user.uid),
+    ...<9 lines>...
+        books=user.books,
+    )
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/BookAPI/.venv/lib/python3.13/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 4 validation errors for MeResponse
+username
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...ername' id='4548812752'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+first_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548813424'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+last_name
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre...t_name' id='4548814096'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+role
+  Input should be a valid string [type=string_type, input_value=<AsyncMock name='mock.cre....value' id='4548818128'>, input_type=AsyncMock]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
