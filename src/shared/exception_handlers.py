@@ -85,7 +85,7 @@ class UserAlreadyExists(BookApiException):
             message="User with email already exists",
             error_code="user_exists",
             details=details,
-            status_code=status.HTTP_403_FORBIDDEN
+            status_code=status.HTTP_409_CONFLICT
         )
 
 
@@ -137,7 +137,7 @@ class AccountNotVerified(BookApiException):
             error_code="account_not_verified",
             details=details,
             resolution="Check your email for verification details",
-            status_code=status.HTTP_403_FORBIDDEN
+            status_code=status.HTTP_401_UNAUTHORIZED
         )
 
 
@@ -147,7 +147,7 @@ class InvalidCredentials(BookApiException):
             message="Invalid email or password",
             error_code="invalid_email_or_password",
             details=details,
-            status_code=status.HTTP_400_BAD_REQUEST
+            status_code=status.HTTP_401_UNAUTHORIZED
         )
 
 

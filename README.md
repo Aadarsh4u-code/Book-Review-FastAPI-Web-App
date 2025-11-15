@@ -30,3 +30,7 @@ alembic upgrade head --sql
 
 ### TO generate secret key
 openssl rand -hex 32
+
+
+#### run schemathesis openapi test
+st run http://127.0.0.1:8000/api/v1/openapi.json --checks all

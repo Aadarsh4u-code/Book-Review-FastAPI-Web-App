@@ -55,9 +55,16 @@ async def signup(form_data: UserCreate, user_service: UserServiceDep, auth_servi
     )
 
 
-@auth_router.get("/verify-email/{token}", status_code=status.HTTP_200_OK)
+@auth_router.get("/verify-email/{token}",
+                 responses={
+                     200: {"description": "Email verified successfully"},
+                     401: {"description": "Invalid or expired token"},
+                     422: {"description": "Validation error"}
+                 },
+                 status_code=status.HTTP_200_OK)
 async def verify_email(token: str, auth_service: AuthServiceDep):
-    return await auth_service.verify_email_token(token)
+    await auth_service.verify_email_token(token)
+    return {"message": "Email verified successfully"}
 
 
 
@@ -87,7 +94,7 @@ async def get_me(user: UserModel = Depends(get_current_user)):
     return MeResponse.from_user(user)
 
 
-@auth_router.post("password-reset-request", status_code=status.HTTP_200_OK)
+@auth_router.post("/password-reset-request", status_code=status.HTTP_200_OK)
 async def password_reset_request(user_email: PasswordResetRequest, auth_service: AuthServiceDep):
     return await auth_service.password_reset(user_email.email)
 

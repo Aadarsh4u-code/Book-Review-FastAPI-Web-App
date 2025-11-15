@@ -25,11 +25,11 @@ class UserCreate(BaseModel):
     first_name: str = Field(..., min_length=3)
     last_name: str = Field(..., min_length=3)
     password: str = Field(..., min_length=6)
-    role: Optional[UserRole] = UserRole.user
-    is_active: Optional[bool] = False
+    role: UserRole = UserRole.user
 
     model_config = ConfigDict(
         from_attributes = True,
+        extra="forbid",
         json_schema_extra= {
             "example": {
                 "first_name": "John",

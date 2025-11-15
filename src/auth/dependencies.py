@@ -24,7 +24,7 @@ class TokenBearer(HTTPBearer):
         # credentials comes from HTTPBearer automatically
         credentials = await super().__call__(request)
         if credentials is None:
-            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Missing credentials")
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authorization header missing.")
 
         token = credentials.credentials
 
@@ -122,7 +122,7 @@ async def get_current_user(user_service: UserServiceDep,
 
     user = await user_service.get_user_by_email(user_data["email"])
     if not user or not user.is_active:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found or inactive")
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="User not found or inactive")
     return user
 
 

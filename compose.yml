@@ -1,0 +1,98 @@
+version: '0.1'
+
+services:
+	web:
+		build: .
+		volumes:
+			- .:/app
+		working_dir: /app
+		environment:
+			# Database (constructed from Postgres vars)
+			DATABASE_URL: "postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}"
+
+			# JWT (both keys provided for compatibility)
+			JWT_SECRET: ${JWT_SECRET_KEY}
+			JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+			JWT_ALGORITHM: ${JWT_ALGORITHM}
+
+			# Mail
+			MAIL_USERNAME: ${MAIL_USERNAME}
+			MAIL_PASSWORD: ${MAIL_PASSWORD}
+			MAIL_SERVER: ${MAIL_SERVER}
+			MAIL_PORT: ${MAIL_PORT}
+			MAIL_FROM: ${MAIL_FROM}
+			MAIL_FROM_NAME: ${MAIL_FROM_NAME}
+
+			# Domain / app settings
+			DOMAIN: ${DOMAIN_URL}
+			DOMAIN_URL: ${DOMAIN_URL}
+
+			# Redis
+			REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+
+		ports:
+			- "8000:8000"
+
+		depends_on:
+			- db
+			- redis
+
+		command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+
+		networks:
+			- app-network
+
+	db:
+		image: postgres:15
+
+		environment:
+			POSTGRES_USER: ${POSTGRES_USER}
+			POSTGRES_DB: ${POSTGRES_DB}
+			POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+		ports:
+			- "5432:5432"
+
+		volumes:
+			- db-data:/var/lib/postgresql/data
+
+		networks:
+			- app-network
+
+	redis:
+		image: redis:6
+
+		ports:
+			- "6379:6379"
+
+		networks:
+			- app-network
+
+	celery:
+		build: .
+		working_dir: /app
+
+		# Use the project's Celery application (inspected at src/worker/celery_app_tasks.py)
+		command: celery -A src.worker.celery_app_tasks.celery_app worker --loglevel=INFO
+
+		volumes:
+			- .:/app
+
+		depends_on:
+			- redis
+			- db
+
+		environment:
+			REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+			DATABASE_URL: "postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}"
+
+		networks:
+			- app-network
+
+volumes:
+	db-data:
+
+networks:
+	app-network:
+		driver: bridge
+

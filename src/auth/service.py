@@ -178,24 +178,25 @@ class AuthService:
 
 
     async def password_reset(self, user_email: EmailStr):
-        if not await self.user_service.check_user_exists(user_email):
-            raise UserNotFound(details={"user_email": user_email})
+        # Check if user exists
+        user_exists = await self.user_service.check_user_exists(user_email)
+        if  user_exists:
+            # Generate a short-lived verification token
+            url_token = create_url_safe_token({"email": user_email})
 
-        # Generate a short-lived verification token
-        url_token = create_url_safe_token({"email": user_email})
+            # Construct verification link
+            reset_link = f"http://{settings.DOMAIN_URL}/api/v1/auth/password-reset-confirm/{url_token}"
 
-        # Construct verification link
-        reset_link = f"http://{settings.DOMAIN_URL}/api/v1/auth/password-reset-confirm/{url_token}"
+            # Render HTML email body
+            html_body = render_password_reset_email_template(reset_link)
 
-        # Render HTML email body
-        html_body = render_password_reset_email_template(reset_link)
-
-        # Build and send message as Background Task with Celery
-        send_email_task.delay(
-            recipient_email=[user_email],
-            subject="Reset your password",
-            html_body=html_body
-        )
+            # Build and send message as Background Task with Celery
+            send_email_task.delay(
+                recipient_email=[user_email],
+                subject="Reset your password",
+                html_body=html_body
+            )
+        # Always return 200, even if user does not exist
         return {"message": "Password reset email sent successfully"}
 
 

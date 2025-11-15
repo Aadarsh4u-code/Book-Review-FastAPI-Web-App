@@ -5,12 +5,14 @@ build/
 dist/
 wheels/
 *.egg-info
+.hypothesis/
 
 # Environments
 .env
 .venv/
 env/
 venv/
+
 
 # VSCode / PyCharm
 .vscode/
