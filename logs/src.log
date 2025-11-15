@@ -1,0 +1,21 @@
+2025-11-15 17:08:10 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:08:21 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:15:35 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:17:05 | INFO     | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:18:00 | INFO     | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:18:02 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:20:51 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:22:49 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:22:58 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:23:04 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:23:17 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:23:37 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:23:42 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:23:51 | INFO     | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:23:51 | INFO     | src:core/logger.py|log_with_context:211 | POST http://testserver/api/v1/auth/send-email - 200 (duration=2.37 ms) | client=testclient
+2025-11-15 17:24:17 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:24:28 | INFO     | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:24:28 | INFO     | src:core/logger.py|log_with_context:211 | POST http://testserver/api/v1/auth/send-email - 200 (duration=1.26 ms) | client=testclient
+2025-11-15 17:25:00 | INFO     | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 17:25:00 | INFO     | src:core/logger.py|log_with_context:211 | POST http://testserver/api/v1/auth/send-email - 200 (duration=1.15 ms) | client=testclient
+2025-11-15 17:25:03 | [32mINFO[0m | src:src/main.py|create_app:81 | ✅ Application initialized ....!!!!

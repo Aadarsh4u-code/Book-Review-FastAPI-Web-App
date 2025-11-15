@@ -7,15 +7,15 @@ from sqlalchemy import pool
 from alembic import context
 
 # Import your Base and settings
-from app.db.base import Base  # Your SQLAlchemy Base
-from app.core.config import settings  # Your settings
+from src.db.base import Base  # Your SQLAlchemy Base
+from src.core.config import settings  # Your settings
 
 # Import ALL your models so Alembic can detect them
 ## ---Add more as you create them --- ###
-from app.books.models import BookModel
-from app.user.models import UserModel
-from app.reviews.models import ReviewModel
-from app.tags.models import TagModel, BookTagModel
+from src.books.models import BookModel
+from src.user.models import UserModel
+from src.reviews.models import ReviewModel
+from src.tags.models import TagModel, BookTagModel
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
