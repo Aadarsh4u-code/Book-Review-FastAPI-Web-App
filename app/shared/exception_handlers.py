@@ -115,6 +115,7 @@ class TagNotFound(BookApiException):
             message="Tag not found",
             error_code="tag_not_found",
             details=details,
+            resolution="Create a new Tag.",
             status_code=status.HTTP_404_NOT_FOUND
         )
 

@@ -1,85 +1,209 @@
-2025-11-14 14:24:13 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:24:23 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:33:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:34:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:37:43 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:38:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:38:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:40:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:53:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:53:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:54:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:54:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:54:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:55:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:55:51 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.32 ms) | client=127.0.0.1
-2025-11-14 14:55:51 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=63.81 ms) | client=127.0.0.1
-2025-11-14 14:55:58 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1 - 404 (duration=0.28 ms) | client=127.0.0.1
-2025-11-14 14:56:10 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs/ - 307 (duration=0.27 ms) | client=127.0.0.1
-2025-11-14 14:56:10 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.29 ms) | client=127.0.0.1
-2025-11-14 14:56:10 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=0.61 ms) | client=127.0.0.1
-2025-11-14 14:57:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:57:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:57:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:58:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:58:32 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:58:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:58:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:59:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:59:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:59:27 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 14:59:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:00:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:00:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:00:40 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.6 ms) | client=127.0.0.1
-2025-11-14 15:00:40 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=72.02 ms) | client=127.0.0.1
-2025-11-14 15:00:50 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/signup - 201 (duration=1371.38 ms) | client=127.0.0.1
-2025-11-14 15:01:21 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/auth/verify_email/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdEIQ.9Bi6jyjuk27ZLIwMJGVy3yO_sq4 - 200 (duration=57.68 ms) | client=127.0.0.1
-2025-11-14 15:01:50 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/docs - 200 (duration=0.25 ms) | client=127.0.0.1
-2025-11-14 15:01:50 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/openapi.json - 200 (duration=0.62 ms) | client=127.0.0.1
-2025-11-14 15:01:58 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/auth/verify_email/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdEIQ.9Bi6jyjuk27ZLIwMJGVy3yO_sq4 - 200 (duration=7.47 ms) | client=127.0.0.1
-2025-11-14 15:02:15 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/docs - 200 (duration=0.3 ms) | client=127.0.0.1
-2025-11-14 15:02:15 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/openapi.json - 200 (duration=0.71 ms) | client=127.0.0.1
-2025-11-14 15:02:28 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/auth/verify_email/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdEIQ.9Bi6jyjuk27ZLIwMJGVy3yO_sq4 - 200 (duration=5.27 ms) | client=127.0.0.1
-2025-11-14 15:02:47 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/docs - 200 (duration=0.32 ms) | client=127.0.0.1
-2025-11-14 15:02:47 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/openapi.json - 200 (duration=0.61 ms) | client=127.0.0.1
-2025-11-14 15:05:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:05:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:08:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:08:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:09:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:09:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:10:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:10:24 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:10:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:10:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:10:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:11:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:13:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:13:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:14:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:14:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:14:23 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:19:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:19:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:19:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:20:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:21:07 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:21:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:21:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:23 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:22:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:23:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:23:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:24:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 15:59:32 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/login - 200 (duration=382.28 ms) | client=127.0.0.1
-2025-11-14 16:00:39 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: account_not_verified
-2025-11-14 16:00:39 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
+2025-11-15 09:51:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 09:51:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 09:53:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 09:53:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 09:57:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 09:57:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 09:57:43 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:50:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:50:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:51:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:52:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:53:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:53:46 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:53:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:54:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:54:29 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:54:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:54:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:54:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:55:13 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:57:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:58:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:58:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:58:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:58:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:58:44 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:58:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 10:59:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:00:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:02:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:04:07 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:04:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:04:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:04:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:05:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:05:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:06:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:18:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:21:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:22:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:22:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:23:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:23:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:23:27 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:23:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:26:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:26:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:26:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:27:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:27:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:27:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:28:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:28:29 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:28:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:29:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:29:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:29:24 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:29:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:29:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:30:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:30:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:30:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:31:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:31:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:31:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:31:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:31:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:32:29 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:32:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:33:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:33:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:33:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:34:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:35:17 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:35:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:35:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:35:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:35:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:36:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:36:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:37:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:37:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:38:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:39:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:39:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:39:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:39:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:39:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:39:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:42:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:47:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:47:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:47:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:47:33 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:47:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:48:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:49:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:49:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:49:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:49:33 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:49:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:50:24 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:50:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:50:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:51:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:51:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:51:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:51:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:51:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:52:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:52:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:52:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:52:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:52:43 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:52:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:53:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:53:33 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:53:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:54:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:54:44 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:54:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:55:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:55:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:55:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:56:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:56:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:56:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:56:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:56:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:57:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:57:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:57:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:58:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:58:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:58:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:59:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:59:24 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 11:59:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:01:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:01:23 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:01:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:01:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:01:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:02:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:02:33 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:02:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:03:07 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:03:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:03:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:03:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:05:44 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:05:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:06:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:06:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:06:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:06:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:07:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:07:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:07:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:08:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:08:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:09:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:10:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:10:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:10:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:11:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:11:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:11:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:11:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:11:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:12:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:12:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:13:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:13:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:14:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:14:07 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:14:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:14:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:21:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:21:38 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:21:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:22:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:22:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:22:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:22:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:22:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:22:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:23:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:23:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:24:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:24:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:24:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:24:33 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:24:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:24:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:26:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:27:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
+2025-11-15 12:35:29 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.98 ms) | client=127.0.0.1
+2025-11-15 12:35:29 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=78.43 ms) | client=127.0.0.1
+2025-11-15 12:35:56 | [32mINFO[0m | app:app/main.py|create_app:80 | ✅ Application initialized ....!!!!
+2025-11-15 12:39:39 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 12:39:48 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 12:39:48 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.33 ms) | client=127.0.0.1
+2025-11-15 12:39:49 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=68.24 ms) | client=127.0.0.1
+2025-11-15 12:40:35 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: account_not_verified
+2025-11-15 12:40:35 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
 Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
@@ -113,186 +237,209 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
     raise AccountNotVerified(details={"user_email": current_user.email})
 app.shared.exception_handlers.AccountNotVerified: Account not verified
-2025-11-14 16:00:39 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/ - 403 (duration=58.35 ms) | client=127.0.0.1
-2025-11-14 16:05:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:12:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:13:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:13:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:13:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:13:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:14:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:15:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:18:46 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:21:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:26:37 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:29:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:29:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:29:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:30:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:30:17 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:30:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:30:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:31:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:32:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:34:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:34:46 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:37:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:38:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:38:07 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:38:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:41:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:41:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:42:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:43:46 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:43:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:44:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:44:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:45:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:45:43 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:46:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:46:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:46:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:46:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:47:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:48:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:49:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:50:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:50:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:51:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:51:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:51:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:51:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:52:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:53:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:53:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:53:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:54:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:55:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:55:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:56:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:57:13 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:57:33 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:57:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:58:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 16:58:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:02:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:02:17 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:02:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:02:38 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:02:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:03:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:03:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:03:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:04:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:04:17 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:04:23 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:04:32 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:04:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:05:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:05:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:05:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:06:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:11:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:11:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:12:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:12:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:12:32 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:13:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:13:27 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:13:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:14:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:14:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:14:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:14:38 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:14:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:15:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:17:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:18:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:18:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:18:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:19:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:19:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:25:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:26:27 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:26:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:27:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:28:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:28:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:28:46 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:29:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:29:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:29:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:30:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:30:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:31:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:31:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:31:24 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:31:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:37:20 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.38 ms) | client=127.0.0.1
-2025-11-14 17:37:21 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=71.73 ms) | client=127.0.0.1
-2025-11-14 17:42:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:42:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:43:33 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.75 ms) | client=127.0.0.1
-2025-11-14 17:43:33 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=73.39 ms) | client=127.0.0.1
-2025-11-14 17:44:00 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: user_not_found
-2025-11-14 17:44:00 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UserNotFound: User not found
+2025-11-15 12:40:35 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/ - 403 (duration=131.87 ms) | client=127.0.0.1
+2025-11-15 12:41:18 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/login - 200 (duration=248.6 ms) | client=127.0.0.1
+2025-11-15 12:41:34 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: insufficient_permissions
+2025-11-15 12:41:34 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in InsufficientPermission: Insufficient permissions
 Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
     response = await f(request)
                ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
     )
     ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 92, in password_reset_request
-    return await auth_service.password_reset(user_email.email)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/service.py", line 192, in password_reset
-    raise UserNotFound(details={"user_email": user_email})
-app.shared.exception_handlers.UserNotFound: User not found
-2025-11-14 17:44:00 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/authpassword-reset-request - 404 (duration=57.51 ms) | client=127.0.0.1
-2025-11-14 17:44:50 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: user_not_found
-2025-11-14 17:44:50 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UserNotFound: User not found
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 138, in __call__
+    raise InsufficientPermission(
+    ...<2 lines>...
+    )
+app.shared.exception_handlers.InsufficientPermission: Insufficient permissions
+2025-11-15 12:41:34 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/ - 401 (duration=7.26 ms) | client=127.0.0.1
+2025-11-15 12:42:12 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 12:42:15 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: insufficient_permissions
+2025-11-15 12:42:15 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in InsufficientPermission: Insufficient permissions
 Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
     response = await f(request)
                ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
     )
     ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 92, in password_reset_request
-    return await auth_service.password_reset(user_email.email)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/service.py", line 192, in password_reset
-    raise UserNotFound(details={"user_email": user_email})
-app.shared.exception_handlers.UserNotFound: User not found
-2025-11-14 17:44:50 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/authpassword-reset-request - 404 (duration=993.08 ms) | client=127.0.0.1
-2025-11-14 17:46:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:47:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:49:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:49:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:49:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:50:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:51:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:54:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 17:55:36 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/authpassword-reset-request - 200 (duration=1949.06 ms) | client=127.0.0.1
-2025-11-14 18:03:25 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/authpassword-reset-request - 200 (duration=789.27 ms) | client=127.0.0.1
-2025-11-14 18:03:51 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 138, in __call__
+    raise InsufficientPermission(
+    ...<2 lines>...
+    )
+app.shared.exception_handlers.InsufficientPermission: Insufficient permissions
+2025-11-15 12:42:15 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/ - 401 (duration=53.14 ms) | client=127.0.0.1
+2025-11-15 12:42:45 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 12:42:47 | [32mINFO[0m | app:books/routes.py|get_all_books:21 | Found 6 books
+2025-11-15 12:42:47 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/ - 200 (duration=62.52 ms) | client=127.0.0.1
+2025-11-15 12:47:03 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | HTTPException raised
+2025-11-15 12:47:03 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 403 (duration=7.58 ms) | client=127.0.0.1
+2025-11-15 12:47:12 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 412, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 253, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+
+2025-11-15 12:47:12 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 500 (duration=43.35 ms) | client=127.0.0.1
+2025-11-15 12:47:12 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 412, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 253, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+
+2025-11-15 12:47:51 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 12:48:21 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 201 (duration=56.46 ms) | client=127.0.0.1
+2025-11-15 12:48:36 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 201 (duration=12.34 ms) | client=127.0.0.1
+2025-11-15 12:49:00 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 201 (duration=7.82 ms) | client=127.0.0.1
+2025-11-15 12:49:14 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 201 (duration=11.83 ms) | client=127.0.0.1
+2025-11-15 14:23:00 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/tags/ - 200 (duration=47.85 ms) | client=127.0.0.1
+2025-11-15 14:24:55 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/tags/40233621-075c-4e7a-aa32-ee8d58584751 - 200 (duration=10.26 ms) | client=127.0.0.1
+2025-11-15 14:25:17 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 201 (duration=11.04 ms) | client=127.0.0.1
+2025-11-15 14:27:12 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
 Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
@@ -302,37 +449,113 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
     raise validation_error
 fastapi.exceptions.RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
-2025-11-14 18:03:51 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/auth/password-reset-confirm/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdu7A.nqiEuxhhNczSsLzxePrAOhJ3fu8 - 422 (duration=13.59 ms) | client=127.0.0.1
-2025-11-14 18:07:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:07:59 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/docs - 200 (duration=0.42 ms) | client=127.0.0.1
-2025-11-14 18:07:59 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/openapi.json - 200 (duration=71.27 ms) | client=127.0.0.1
-2025-11-14 18:08:15 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+2025-11-15 14:27:12 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | PUT http://127.0.0.1:8000/api/v1/tags/d082c844-2500-4e8d-b99c-088e4770b20b - 422 (duration=13.7 ms) | client=127.0.0.1
+2025-11-15 14:27:46 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | PUT http://127.0.0.1:8000/api/v1/tags/d082c844-2500-4e8d-b99c-088e4770b20b - 200 (duration=230.69 ms) | client=127.0.0.1
+2025-11-15 14:28:04 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | HTTPException raised
+2025-11-15 14:28:04 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 400 (duration=7.55 ms) | client=127.0.0.1
+2025-11-15 14:28:55 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | DELETE http://127.0.0.1:8000/api/v1/tags/d082c844-2500-4e8d-b99c-088e4770b20b - 200 (duration=6.18 ms) | client=127.0.0.1
+2025-11-15 14:32:10 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | HTTPException raised
+2025-11-15 14:32:10 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 403 (duration=1.52 ms) | client=127.0.0.1
+2025-11-15 14:32:18 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 200 (duration=43.99 ms) | client=127.0.0.1
+2025-11-15 14:32:58 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 200 (duration=19.05 ms) | client=127.0.0.1
+2025-11-15 14:34:40 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: account_not_verified
+2025-11-15 14:34:40 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
 Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
+    raise AccountNotVerified(details={"user_email": current_user.email})
+app.shared.exception_handlers.AccountNotVerified: Account not verified
+2025-11-15 14:34:40 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/8c5b64aa-8378-4cf5-b721-6d87df8bc935 - 403 (duration=19.23 ms) | client=127.0.0.1
+2025-11-15 14:34:50 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: account_not_verified
+2025-11-15 14:34:50 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
+    raise AccountNotVerified(details={"user_email": current_user.email})
+app.shared.exception_handlers.AccountNotVerified: Account not verified
+2025-11-15 14:34:50 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/8c5b64aa-8378-4cf5-b721-6d87df8bc935 - 403 (duration=10.83 ms) | client=127.0.0.1
+2025-11-15 14:35:03 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | HTTPException raised
+2025-11-15 14:35:03 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/8c5b64aa-8378-4cf5-b721-6d87df8bc935 - 401 (duration=0.97 ms) | client=127.0.0.1
+2025-11-15 14:35:29 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | HTTPException raised
+2025-11-15 14:35:29 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/8c5b64aa-8378-4cf5-b721-6d87df8bc935 - 401 (duration=1.6 ms) | client=127.0.0.1
+2025-11-15 14:35:56 | [32mINFO[0m | app:books/routes.py|get_all_books:21 | Found 6 books
+2025-11-15 14:35:56 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://127.0.0.1:8000/api/v1/books/ - 200 (duration=13.09 ms) | client=127.0.0.1
+2025-11-15 14:37:22 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 200 (duration=16.59 ms) | client=127.0.0.1
+2025-11-15 14:44:16 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:44:46 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:46:51 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:47:23 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:47:35 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:47:51 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:48:04 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:48:09 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:48:31 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:48:53 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:49:20 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:49:32 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:49:46 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:49:56 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:50:08 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:50:34 | [32mINFO[0m | app:app/main.py|create_app:81 | ✅ Application initialized ....!!!!
+2025-11-15 14:51:00 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: tag_not_found
+2025-11-15 14:51:00 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in TagNotFound: Tag not found
+Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
@@ -347,62 +570,17 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
     return await dependant.call(**values)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
-          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
-    status_code=status.HTTP_400_UNAUTHORIZED
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
-    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
-AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
-2025-11-14 18:08:15 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/password-reset-confirm/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdu7A.nqiEuxhhNczSsLzxePrAOhJ3fu8 - 500 (duration=33.51 ms) | client=127.0.0.1
-2025-11-14 18:08:15 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/routes.py", line 62, in add_tags_to_book
+    return await tag_service.add_tag_to_book(book_uid, tag_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/services.py", line 85, in add_tag_to_book
+    raise TagNotFound(details={"tag_name": tag_item.name})
+app.shared.exception_handlers.TagNotFound: Tag not found
+2025-11-15 14:51:00 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 404 (duration=84.41 ms) | client=127.0.0.1
+2025-11-15 14:51:42 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/ - 201 (duration=28.75 ms) | client=127.0.0.1
+2025-11-15 14:51:48 | [33mWARNING[0m | app:core/logger.py|log_with_context:211 | Handled BookApiException: tag_not_found
+2025-11-15 14:51:48 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in TagNotFound: Tag not found
 Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
     await app(scope, receive, sender)
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
@@ -417,487 +595,11 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
     return await dependant.call(**values)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
-          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
-    status_code=status.HTTP_400_UNAUTHORIZED
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
-    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
-AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
-2025-11-14 18:10:55 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:11:22 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
-          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
-    status_code=status.HTTP_400_UNAUTHORIZED
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
-    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
-AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
-2025-11-14 18:11:22 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/password-reset-confirm/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdu7A.nqiEuxhhNczSsLzxePrAOhJ3fu8 - 500 (duration=12.71 ms) | client=127.0.0.1
-2025-11-14 18:11:22 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"confirm_new_password": "Passwords don't match."})
-          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
-    status_code=status.HTTP_400_UNAUTHORIZED
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
-    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
-AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
-2025-11-14 18:12:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:12:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:13:38 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:13:57 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"new_password": passwords.new_password})
-          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
-    status_code=status.HTTP_400_UNAUTHORIZED
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
-    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
-AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
-2025-11-14 18:13:57 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/password-reset-confirm/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdu7A.nqiEuxhhNczSsLzxePrAOhJ3fu8 - 500 (duration=11.21 ms) | client=127.0.0.1
-2025-11-14 18:13:57 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"new_password": passwords.new_password})
-          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/shared/exception_handlers.py", line 169, in __init__
-    status_code=status.HTTP_400_UNAUTHORIZED
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/status.py", line 205, in __getattr__
-    raise AttributeError(f"module 'starlette.status' has no attribute '{name}'")
-AttributeError: module 'starlette.status' has no attribute 'HTTP_400_UNAUTHORIZED'. Did you mean: 'HTTP_401_UNAUTHORIZED'?
-2025-11-14 18:16:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:16:32 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: Password do not match
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"new_password": passwords.new_password})
-app.shared.exception_handlers.PasswordNotMatch: Password do not match
-2025-11-14 18:16:32 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/password-reset-confirm/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdu7A.nqiEuxhhNczSsLzxePrAOhJ3fu8 - 500 (duration=12.51 ms) | client=127.0.0.1
-2025-11-14 18:16:32 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: Password do not match
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 93, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 144, in simple_response
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
-    self.gen.throw(value)
-    ~~~~~~~~~~~~~~^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/routes.py", line 98, in password_reset_request_confirm
-    raise PasswordNotMatch(details={"new_password": passwords.new_password})
-app.shared.exception_handlers.PasswordNotMatch: Password do not match
-2025-11-14 18:17:16 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/password-reset-confirm/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aRdu7A.nqiEuxhhNczSsLzxePrAOhJ3fu8 - 200 (duration=294.3 ms) | client=127.0.0.1
-2025-11-14 18:19:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 18:21:15 | [31mERROR[0m | app:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 6 characters', 'input': '12345', 'ctx': {'min_length': 6}}]
-Traceback (most recent call last):
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
-    raise validation_error
-fastapi.exceptions.RequestValidationError: [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 6 characters', 'input': '12345', 'ctx': {'min_length': 6}}]
-2025-11-14 18:21:15 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/login - 422 (duration=10.4 ms) | client=127.0.0.1
-2025-11-14 18:21:29 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | HTTPException raised
-2025-11-14 18:21:29 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/login - 401 (duration=349.26 ms) | client=127.0.0.1
-2025-11-14 18:21:40 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/login - 200 (duration=282.78 ms) | client=127.0.0.1
-2025-11-14 20:13:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:14:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:30:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:37:13 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:37:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:37:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:38:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:38:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:38:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:49:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:49:47 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:49:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:50:04 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:50:45 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:51:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:51:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:51:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:58:43 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:58:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:58:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:59:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:59:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:59:32 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 20:59:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:00:42 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:00:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:01:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:01:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:01:49 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:02:07 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:02:20 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:02:28 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:03:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:03:46 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:04:01 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:04:22 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:04:30 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:05:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:05:05 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:05:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:06:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:06:54 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:07:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:07:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:07:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:08:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:08:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:09:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:10:24 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:10:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:10:57 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:11:09 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:11:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:11:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:11:44 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:11:51 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:12:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:12:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:12:21 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:13:00 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:13:41 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:14:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:14:59 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:17:08 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:17:17 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:17:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:17:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:18:10 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:18:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:18:25 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:19:15 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:19:26 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:20:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:22:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:23:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:23:12 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:23:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:23:35 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:24:03 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:24:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:24:19 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:24:53 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:25:02 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:25:11 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:27:40 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:32:50 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:33:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:36:36 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:49:31 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:51:06 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:51:16 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:51:29 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:51:56 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:53:18 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:53:32 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:54:27 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:57:14 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:57:39 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 21:57:48 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 22:01:34 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 22:03:23 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 22:03:43 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 22:03:58 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 22:22:52 | [32mINFO[0m | app:app/main.py|create_app:79 | ✅ Application initialized ....!!!!
-2025-11-14 22:24:26 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/auth/signup - 201 (duration=358.44 ms) | client=127.0.0.1
-2025-11-14 22:24:58 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | GET http://localhost:8000/api/v1/auth/verify-email/eyJlbWFpbCI6ImRlcmVraGVhcnQwMjBAZ21haWwuY29tIn0.aResGg.ftdHDYCzfpMESqSTKPxx_MtBsgY - 200 (duration=133.95 ms) | client=127.0.0.1
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/routes.py", line 62, in add_tags_to_book
+    return await tag_service.add_tag_to_book(book_uid, tag_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/services.py", line 85, in add_tag_to_book
+    raise TagNotFound(details={"tag_name": tag_item.name})
+app.shared.exception_handlers.TagNotFound: Tag not found
+2025-11-15 14:51:48 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 404 (duration=13.52 ms) | client=127.0.0.1
+2025-11-15 14:52:39 | [32mINFO[0m | app:core/logger.py|log_with_context:211 | POST http://127.0.0.1:8000/api/v1/tags/book/8c5b64aa-8378-4cf5-b721-6d87df8bc935/tags - 200 (duration=104.41 ms) | client=127.0.0.1

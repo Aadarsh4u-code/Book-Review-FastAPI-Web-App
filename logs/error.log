@@ -1450,3 +1450,340 @@ Traceback (most recent call last):
   File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
     raise validation_error
 fastapi.exceptions.RequestValidationError: [{'type': 'string_too_short', 'loc': ('body', 'password'), 'msg': 'String should have at least 6 characters', 'input': '12345', 'ctx': {'min_length': 6}}]
+2025-11-15 12:40:35 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
+    raise AccountNotVerified(details={"user_email": current_user.email})
+app.shared.exception_handlers.AccountNotVerified: Account not verified
+2025-11-15 12:41:34 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in InsufficientPermission: Insufficient permissions
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 138, in __call__
+    raise InsufficientPermission(
+    ...<2 lines>...
+    )
+app.shared.exception_handlers.InsufficientPermission: Insufficient permissions
+2025-11-15 12:42:15 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in InsufficientPermission: Insufficient permissions
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 138, in __call__
+    raise InsufficientPermission(
+    ...<2 lines>...
+    )
+app.shared.exception_handlers.InsufficientPermission: Insufficient permissions
+2025-11-15 12:47:12 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in HTTP Middleware: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 412, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 253, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+
+2025-11-15 12:47:12 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in UnhandledException: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/trustedhost.py", line 51, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/aadarshkushwaha/.local/share/uv/python/cpython-3.13.7-macos-x86_64-none/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/core/middleware.py", line 21, in custom_http_logging
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 124, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 412, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 253, in serialize_response
+    raise ResponseValidationError(
+        errors=_normalize_errors(errors), body=response_content
+    )
+fastapi.exceptions.ResponseValidationError: 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'created'), 'msg': 'Field required', 'input': <Tag python>}
+
+2025-11-15 14:27:12 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 431, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: [{'type': 'missing', 'loc': ('body',), 'msg': 'Field required', 'input': None}]
+2025-11-15 14:34:40 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
+    raise AccountNotVerified(details={"user_email": current_user.email})
+app.shared.exception_handlers.AccountNotVerified: Account not verified
+2025-11-15 14:34:50 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in AccountNotVerified: Account not verified
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 380, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py", line 675, in solve_dependencies
+    solved = await run_in_threadpool(call, **solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/auth/dependencies.py", line 135, in __call__
+    raise AccountNotVerified(details={"user_email": current_user.email})
+app.shared.exception_handlers.AccountNotVerified: Account not verified
+2025-11-15 14:51:00 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in TagNotFound: Tag not found
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/routes.py", line 62, in add_tags_to_book
+    return await tag_service.add_tag_to_book(book_uid, tag_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/services.py", line 85, in add_tag_to_book
+    raise TagNotFound(details={"tag_name": tag_item.name})
+app.shared.exception_handlers.TagNotFound: Tag not found
+2025-11-15 14:51:48 | [0m[0m[31mERROR[0m[0m[0m | app:core/logger.py|log_exception:251 | Exception in TagNotFound: Tag not found
+Traceback (most recent call last):
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 289, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/routes.py", line 62, in add_tags_to_book
+    return await tag_service.add_tag_to_book(book_uid, tag_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aadarshkushwaha/Desktop/Study /PythonBackend/Bookly/app/tags/services.py", line 85, in add_tag_to_book
+    raise TagNotFound(details={"tag_name": tag_item.name})
+app.shared.exception_handlers.TagNotFound: Tag not found

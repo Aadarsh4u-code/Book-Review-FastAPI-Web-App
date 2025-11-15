@@ -10,6 +10,7 @@ from app.db.redis import redis_client
 from app.db.session import init_db
 from app.reviews.routes import reviews_router
 from app.shared.exception_handlers import register_exception_handlers
+from app.tags.routes import tags_router
 
 version = "v1"
 description = """
@@ -75,6 +76,7 @@ def create_app() -> FastAPI:
     fastapi_app.include_router(auth_router, prefix=f"{version_prefix}/auth", tags=["v1 | 👮🏻‍♀️ Authentication"])
     fastapi_app.include_router(book_router, prefix=f"{version_prefix}/books", tags=["v1 | 📚 Books"])
     fastapi_app.include_router(reviews_router, prefix=f"{version_prefix}/reviews", tags=["v1 | 👁️‍🗨️ Reviews"])
+    fastapi_app.include_router(tags_router, prefix=f"{version_prefix}/tags", tags=["v1 |🔖 Tags"])
 
     logger.info("✅ Application initialized ....!!!!")
     return fastapi_app

@@ -44,4 +44,5 @@ async def init_db():
         from app.books.models import BookModel
         from app.user.models import UserModel
         from app.reviews.models import ReviewModel
+        from app.tags.models import TagModel, BookTagModel
         await conn.run_sync(Base.metadata.create_all)

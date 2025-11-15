@@ -9,7 +9,7 @@ from app.books.schemas import BookUpdate, BookResponse, BookCreate
 from app.core.logger import logger
 from app.shared.utils import UserRole
 
-role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin])
+role_checker_dep = get_role_checker_dep([UserRole.user, UserRole.admin, UserRole.superadmin])
 book_router = APIRouter(dependencies=[role_checker_dep])
 
 

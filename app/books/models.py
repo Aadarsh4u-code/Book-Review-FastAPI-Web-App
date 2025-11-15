@@ -10,6 +10,7 @@ from app.db.base import Base
 if TYPE_CHECKING:
     from app.user.models import UserModel
     from app.reviews.models import ReviewModel
+    from app.tags.models import TagModel
 
 
 # ---------- Book Model ----------
@@ -44,6 +45,11 @@ class BookModel(Base):
     )
     reviews: Mapped[List["ReviewModel"]] = relationship(  # type: ignore[type-arg]
         back_populates="book", lazy="selectin"
+    )
+    tags: Mapped[List["TagModel"]] = relationship(
+        secondary="book_tags",
+        back_populates="books",
+        lazy="selectin",
     )
 
     def __repr__(self):

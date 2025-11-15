@@ -4,6 +4,7 @@ from typing import Optional, List
 import uuid
 
 from app.reviews.schemas import ReviewResponse
+from app.tags.schemas import TagResponse
 
 
 class BookBase(BaseModel):
@@ -52,6 +53,7 @@ class BookResponse(BookBase):
     created_at: datetime
     updated_at: datetime
     reviews: List[ReviewResponse]
+    tags: List[TagResponse]
 
     model_config = ConfigDict(
         from_attributes=True
